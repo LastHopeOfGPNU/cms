@@ -12,4 +12,5 @@ urlpatterns = [
     # 后台页面
     path('admin', admin, name='admin'),
     path('admin/login', login, name='admin_login'),
+    path('admin/test', test, name="admin_test")
 ]

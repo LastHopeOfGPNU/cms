@@ -7,3 +7,6 @@ def admin(request):
 
 def login(request):
     return render(request, 'main/backend/login.html')
+
+def test(request):
+    return render(request, 'main/backend/test.html')
