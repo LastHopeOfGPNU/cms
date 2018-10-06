@@ -1,6 +1,7 @@
 import base64
 from hashlib import md5, sha1
 from random import random
+from .models import *
 
 encoding = 'utf-8'
 
@@ -51,3 +52,12 @@ def pwCheck(password, saved):
     salt = svd[20:]
     hash = hashGen(password, salt)
     return hash == saved
+
+
+def get_user_from_session(request):
+    try:
+        cookie = request.session['cookie']
+        user = User.objects.get(cookie=cookie)
+        return user
+    except:
+        return None
