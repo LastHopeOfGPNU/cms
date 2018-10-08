@@ -8,5 +8,10 @@ def admin(request):
 def login(request):
     return render(request, 'main/backend/login.html')
 
+
 def test(request):
     return render(request, 'main/backend/test.html')
+
+
+def index(request):
+    return render(request, 'main/front/index.html')
