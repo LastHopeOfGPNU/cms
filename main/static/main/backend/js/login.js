@@ -28,18 +28,20 @@ function formSubmit(e) {
         return;
     }
     var postData = {
-        username: username,
-        password: password
+        "params" : {
+            "username": username,
+            "password": password
+        }
     }
     $.ajax({
         type:'post',
-        url:'users/login/',
-        contentType:'application/x-www-form-urlencoded',
+        url:'/user/login',
+        contentType:'application/json;charset=utf-8',
         dataType:'json',
-        data: postData,
+        data: JSON.stringify(postData),
         success:function(res){
             switch(res.success){
-                case 'false':
+                case false:
                     new PNotify({
                         title: '登录失败',
                         text: res.msg,
@@ -49,30 +51,17 @@ function formSubmit(e) {
                         stack: stack_bottomright
                     });
                     break;
-                case 'true':
-                    if(res.data.user_info.identity == '3' || res.data.user_info.identity == '4'){
-                        new PNotify({
-                            title: '登录成功',
-                            text: res.msg,
-                            type: 'success',
-                            delay: 3000,
-                            addclass: "stack-bottomright",
-                            stack: stack_bottomright
-                        });
-                        sessionStorage.setItem("uid", res.data.user_info.uid);
-                        sessionStorage.setItem("nick", res.data.user_info.nick);
-                        sessionStorage.setItem("identity", res.data.user_info.identity);
-                        window.location.href = '/mgr_index';
-                    } else {
-                        new PNotify({
-                            title: '登录失败',
-                            text: '该账号非管理员',
-                            type: 'error',
-                            delay: 3000,
-                            addclass: "stack-bottomright",
-                            stack: stack_bottomright
-                        });
-                    }
+                case true:
+                    new PNotify({
+                        title: '登录成功',
+                        text: res.msg,
+                        type: 'success',
+                        delay: 3000,
+                        addclass: "stack-bottomright",
+                        stack: stack_bottomright
+                    });
+                    sessionStorage.setItem("userInfo", JSON.stringify(res.data));
+                    window.location.href = '/admin';
                     break;
             }
         },error:function(XMLHttpRequest, textStatus, errorThrown){

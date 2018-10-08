@@ -15,3 +15,7 @@ def test(request):
 
 def index(request):
     return render(request, 'main/front/index.html')
+
+
+def article(request):
+    return render(request, 'main/backend/article.html')
