@@ -18,6 +18,7 @@ def create_user(username, password):
 
 class UserLoginView(GenericAPIView):
     queryset = User.objects.all()
+    serializer_class = UserSerializer
 
     def post(self, request):
         login_fail = {'data': '', 'msg': '用户名或密码错误', 'success': False}
@@ -38,6 +39,9 @@ class UserLoginView(GenericAPIView):
             user.save()
             # 放入session
             request.session['cookie'] = cookie
+            # 放入用户信息
+            data = self.get_serializer(user).data
+            login_success['data'] = data
             return Response(login_success)
         except Exception as e:
             print(e.__repr__())

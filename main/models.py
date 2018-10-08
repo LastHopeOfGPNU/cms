@@ -13,3 +13,26 @@ class User(models.Model):
     qq = models.CharField(max_length=200, default='')
     nick = models.CharField(max_length=200, default='')
     cookie = models.CharField(max_length=32, blank=True, null=True, default='')
+
+
+class Article(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    introduction = models.CharField(max_length=200)  # 文章简介
+    view = models.IntegerField(default=0)  # 浏览次数
+    in_date = models.DateTimeField()  # 发布日期
+    coverPicture = models.CharField(max_length=200)  # 封面图
+
+
+class Tag(models.Model):
+    id = models.AutoField(primary_key=True)
+    tagname = models.CharField(max_length=200)
+    pid = models.IntegerField(default=-1)
+
+
+# 文章与标签的多对多表
+class ArticleTag(models.Model):
+    id = models.AutoField(primary_key=True)
+    article_id = models.IntegerField()
+    tag_id = models.IntegerField()
