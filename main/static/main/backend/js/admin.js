@@ -119,14 +119,20 @@ $(function() {
         railBorderRadius: '6px' //轨道圆角
     });
     formValidator();
-    var nick = sessionStorage.getItem('nick')
+    var userInfo = sessionStorage.getItem('userInfo');
+    if(!!userInfo) {
+        $(".sp-info>span").text(JSON.stringify(userInfo).nick);
+    } else {
+        window.href = "/admin/login"
+    }
+    /*var nick = sessionStorage.getItem('nick')
     var identity = sessionStorage.getItem('identity');
     if(identity === '3') {$('.superMgr').show();}
     if(nick === null) {
         $(".sp-info>span").text('题库管理员')
     } else {
         $(".sp-info>span").text(nick)
-    }
+    }*/
 });
 // iframe高度自适应
 function changeFrameHeight(ifm) {

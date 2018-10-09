@@ -18,5 +18,9 @@ urlpatterns = [
     # 后台页面
     path('admin', admin, name='admin'),
     path('admin/login', login, name='admin_login'),
-    path('admin/test', test, name="admin_test")
+    path('admin/test', test, name="admin_test"),
+    path('admin/article', article, name="admin_article"),
+
+    # 前端页面
+    path('index', index, name='index')
 ]
