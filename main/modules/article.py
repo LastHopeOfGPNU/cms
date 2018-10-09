@@ -46,9 +46,7 @@ class ArticleView(BaseListView):
         try:
             dataset = self.queryset.order_by('-id')
             if tagid:
-                tag = Tag.objects.get(id=tagid)
-                article_ids = ArticleTag.objects.filter(tag_id=tag.id)
-                dataset = dataset.filter(id__in=article_ids.values_list('article_id', flat=True))
+                dataset = dataset.filter(tagid=tagid)
             return dataset
         except Exception as e:
             print(e.__repr__())
@@ -76,12 +74,8 @@ class ArticleDetailView(GenericAPIView):
             in_date = timezone.now()
             article = Article.objects.create(title=params['title'], content=params['detail'],
                                              introduction=params['introduction'], in_date=in_date,
-                                             coverPicture=params['coverPicture'])
+                                             coverPicture=params['coverPicture'], tagid=params['tagid'])
             article.save()
-            # 添加tag
-            tagid = params['tagid']
-            tag = Tag.objects.get(id=tagid)
-            ArticleTag.objects.create(article_id=article.id, tag_id=tag.id).save()
             # 返回创建的文章对象
             data = self.get_serializer(article).data
             return Response({'data': data, 'success': True, 'msg': ''})
@@ -104,9 +98,6 @@ class ArticleDetailView(GenericAPIView):
                 setattr(article, key, value)
             article.in_date = in_date  # 更新文章发布时间（也可以说是最近修改时间）
             article.save()
-            # 删除原有tag并新建
-            ArticleTag.objects.filter(article_id=article.id).delete()
-            ArticleTag.objects.create(article_id=article.id, tag_id=tagid).save()
             # 返回修改后的文章对象
             data = self.get_serializer(article).data
             return Response({'data': data, 'success': True, 'msg': '修改成功'})

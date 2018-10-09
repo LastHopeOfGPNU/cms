@@ -23,12 +23,13 @@ class Article(models.Model):
     view = models.IntegerField(default=0)  # 浏览次数
     in_date = models.DateTimeField()  # 发布日期
     coverPicture = models.CharField(max_length=200)  # 封面图
+    tagid = models.IntegerField(null=True)
 
 
 class Tag(models.Model):
     id = models.AutoField(primary_key=True)
     tagname = models.CharField(max_length=200)
-    pid = models.IntegerField(default=-1)
+    tagid = models.IntegerField(unique=True, null=True)
 
 
 # 文章与标签的多对多表
