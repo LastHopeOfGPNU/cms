@@ -832,8 +832,8 @@ hr {
 
     padding: 20px 0;
 
-    background: url(http://www.chenxincheng.com.k.90qh.com/wp-content/themes/leifw/img/hotlists-slidebg.png);
-
+    /*background: url();*/
+    background-color: #00a8c6;
 }
 
 
