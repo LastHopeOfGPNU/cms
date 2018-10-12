@@ -23,20 +23,45 @@
 </head>
 <body>
 <div id="main">
-    <div class="modal fade" id="lookInfo" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">查看反馈内容</h4>
+    <div id="search-part" class="row" style="display: none">
+        <div id="search-form" name="search-form">
+            <div>
+                <div class="search-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">题目标题</label>
+                    <input id="title" class="search-control" type="text"/>
                 </div>
-                <div id="infoDetail" class="modal-body">
-
+                <div class="search-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">PID</label>
+                    <input id="problem_id" class="search-control" type="text"/>
                 </div>
-                <div class="modal-footer">
-                    <!--底部操作-->
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <!--<button type="button" class="btn btn-primary">确认导入</button>-->
+                <div class="search-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">题目类型</label>
+                    <select class="form-control" name="problem_type" id="problem_type">
+                        <option value=""></option>
+                        <option value="1">填空题</option>
+                        <option value="2">选择题</option>
+                        <option value="3">编程题</option>
+                        <option value="4">问答题</option>
+                        <option value="5">判断题</option>
+                    </select>
+                </div>
+                <div class="search-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">题目标签</label>
+                    <select class="form-control" name="tagid" id="tagid">
+                        <option value=""></option>
+                        {% for tag in tags %}
+                        <option value="{{ tag.tagid }}">{{ tag.tagname }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="serch-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">题目从属</label>
+                    <select name="defunct" id="defunct" class="form-control">
+                        <option value=""></option>
+                        <option value="N">非竞赛题目</option>
+                        <option value="Y">竞赛题目</option>
+                        <option value="E">考试题目</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -44,16 +69,16 @@
     <div id="data-part" class="clearfix">
         <div id="toolbar" class="btn-toolbar">
             <button class="btn btn-primary" onclick="">添加文章 <i class="icon-zoom-in"></i></button>
-            <!--<button class="btn btn-primary" onclick="markFeedBack()">标记反馈意见 <i class="icon-star"></i></button>
-            <button class="btn btn-success" onclick="solveFeedBack()">标记为已解决 <i class="icon-check"></i></button>-->
             <button class="btn btn-danger" onclick="">删除文章 <i class="icon-remove"></i></button>
+            <button id="search" type="button" class="btn btn-success btn-sm" style="display: none"><i class="icon-search"></i> <span>搜索</span></button>
+            <button id="toggle-search" type="button" class="btn"><i class="icon-angle-down"></i> <span>展开搜索</span></button>
         </div>
         <table id="table" data-classes="table table-hover table-responsive table-sm">
             <thead>
             <tr>
                 <th data-checkbox="true" data-field="state"></th>
 
-                <th data-title="文章标题" data-field="title" data-align="center"></th>
+                <th data-title="文章标题" data-field="href" data-align="center"></th>
                 <th data-title="发布日期" data-field="in_date" data-align="center"></th>
                 <th data-title="文章浏览数" data-field="view" data-align="center"></th>
             </tr>
@@ -70,7 +95,6 @@
 <script src="{% static 'main/backend/plugin/layer/layer.js' %}"></script>
 <script src="{% static 'main/backend/plugin/bootstrap-datetimepicker/js/moment.js' %}"></script>
 <script src="{% static 'main/backend/plugin/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
-{#<script src="{% static 'main/backend/js/common.js' %}"></script>#}
 <script src="{% static 'main/backend/js/article.js' %}"></script>
 </body>
 </html>

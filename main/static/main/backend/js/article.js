@@ -11,7 +11,7 @@ $(function () {
 });
 function initPage() {
     $table.bootstrapTable({
-        height: getHeight(),
+        height: getHeight,
         toolbar: "#toolbar",
         url: '/article',//异步请求的链接
         method: 'get',
@@ -46,6 +46,7 @@ function responseHandler(res) {
     var data = res.data;
     for(var i = 0;i<data.length;i++) {
         data[i].in_date = data[i].in_date.replace('T','-');
+        data[i].href = '<a href="/admin/articleDetail?id='+data[i].id+'" target="_blank">'+data[i].title+'</a>'
     }
     return {
         "total": res.total,
@@ -183,3 +184,15 @@ $table.on('expand-row.bs.table', function (e, index, row, $detail) {
     });
     return $detail.html(html);
 });
+//添加题库
+function showAddArticle() {
+    var index = layer.open({
+        type: 2,
+        title: '新增',
+        shadeClose: false,
+        shade: 0.8,
+        area: ['800px', '90%'],
+        content: '/problemDetail'
+    });
+    layer.full(index);
+}

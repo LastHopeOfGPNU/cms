@@ -19,3 +19,7 @@ def index(request):
 
 def article(request):
     return render(request, 'main/backend/article.html')
+
+
+def articleDetail(request):
+    return render(request, 'main/backend/articleDetail.html')

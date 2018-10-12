@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/login', login, name='admin_login'),
     path('admin/test', test, name="admin_test"),
     path('admin/article', article, name="admin_article"),
+    path('admin/articleDetail', articleDetail, name="admin_articleDetail"),
 
     # 前端页面
     path('index', index, name='index')
