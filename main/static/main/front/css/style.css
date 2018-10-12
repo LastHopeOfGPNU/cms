@@ -1,17 +1,4 @@
-/*
 
-Theme Name: 雷锋网主题
-
-
-Author:为您网络服务中心
-
-AuthorURI: http://dwz.cn/211Dk0
-
-Description: HTML5+CSS3响应式布局，适合不同分辨率的设备，自定义小工具，自动缩略图，ajax评论，图片lightbox查看等功能。
-
-Version: 2.3
-
-*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead,figure {
 
     border: 0;
@@ -180,7 +167,7 @@ a {
 
 a:hover {
 
-    color: #DB6D4C;
+    color: #009bdb;
 
     text-decoration: none;
 
@@ -384,7 +371,7 @@ hr {
 
     height: 30px;
 
-    border: 1px solid #dd6e4c;
+    border: 1px solid #009bdb;
 
 }
 
@@ -418,7 +405,7 @@ hr {
 
     cursor: pointer;
 
-    background-color: #dd6e4c;
+    background-color: #009bdb;
 
     border: 0px;
 
@@ -664,7 +651,7 @@ hr {
 
 .main-nav {
 
-    border-bottom: 2px solid #dd6e4c;
+    border-bottom: 2px solid #009bdb;
 
     background: #313131;
 
@@ -686,7 +673,7 @@ hr {
 
     opacity: .9;
 
-    border-bottom: 2px solid #dd6e4c;
+    border-bottom: 2px solid #009bdb;
 
     background: #313131;
 
@@ -730,7 +717,7 @@ hr {
 
 .header-menu-nav >.current-menu-item  {
 
-    background-color: #DB6D4C;
+    background-color: #009bdb;
 
     font-weight: bold;
 
@@ -1042,7 +1029,7 @@ hr {
 
 .content-ajax article:hover h2 a {
 
-    color: #DB6D4C;
+    color: #009bdb;
 
 }
 
@@ -1094,7 +1081,7 @@ hr {
 
 .content-ajax .tip h4 span.yel,.daodu .tip h4 span.yel {
 
-    color: #DB6D4C;
+    color: #009bdb;
 
 }
 
@@ -1354,7 +1341,7 @@ hr {
 
     height: 57px;
 
-    background: #DB6D4C;
+    background: #009bdb;
 
     text-align: center;
 
@@ -3247,7 +3234,7 @@ nav.comment-nav a:hover {
 
 #shang,#comt,#xia {
 
-    background: url(http://www.chenxincheng.com.k.90qh.com/wp-content/themes/leifw/img/gototop.png) no-repeat;
+    background: url('../img/gototop.png') no-repeat;
 
     position: relative;
 
