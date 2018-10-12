@@ -192,7 +192,7 @@ function showAddArticle() {
         shadeClose: false,
         shade: 0.8,
         area: ['800px', '90%'],
-        content: '/problemDetail'
+        content: '/admin/articleDetail'
     });
     layer.full(index);
 }
