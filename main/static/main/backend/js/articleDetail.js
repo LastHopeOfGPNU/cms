@@ -10,71 +10,31 @@ $(function () {
     var $form = $('#newForm');
     initPage();
     $save.on('click',submitForm);
-    $('input[type="file"]').on('change',function (e) {
+    $(document).on('change','input[type="file"]',function (e) {
         e.stopPropagation();
-         var fileList = $(this).get(0).files;
+        var fileList = $(this).get(0).files;
+        if($('.file-item').length === 1) {
+            layer.msg('仅能上传一张封面图');
+        }
         if(fileList.length == 0)return ;
-        var target=$(this).next().next().children(".file-list").first();
-        var targetInput=$(this).next().children('input').first();
+        if(fileList[0].type.indexOf("image") < 0) {
+            layer.msg("请上传图片格式文件");
+            return;
+        }
+        var target=$(this).parent().find(".file-list");
+        var targetInput=$(this).next().children('input');
         var formData = new FormData();
-        // for(var i = 0;fileList.length;i++)
-        formData.append('files',fileList[0]);
+        formData.append('upload',fileList[0]);
         var xhr = getRequestObject();
         xhr.onload = function () {
             var data=JSON.parse(xhr.responseText);
             if(xhr.status===200){
-                var list = data.data.data_list;
-                var fileIds = targetInput.attr('data-id') || '';
-                for(var i = 0; i < list.length; i++) {
-                    if(fileIds === '') {
-                        fileIds += list[i].id;
-                    } else {
-                        fileIds += ',' + list[i].id;
-                    }
-                    var suffix = (fileList[i].name).split('.')[1];
-                    var iconSrc = '';
-                    switch (suffix) {
-                        case 'doc':
-                        case 'docx':
-                            iconSrc = '/static/assets/word.png';
-                            break;
-                        case 'xls':
-                        case 'xlsx':
-                            iconSrc = '/static/assets/excel.png';
-                            break;
-                        case 'txt':
-                            iconSrc = '/static/assets/txt.png';
-                            break;
-                        case 'pdf':
-                            iconSrc = '/static/assets/pdf.png';
-                            break;
-                        case 'zip':
-                        case 'rar':
-                            iconSrc = '/static/assets/zip.png';
-                            break;
-                        case 'png':
-                        case 'jpg':
-                        case 'jpeg':
-                        case 'gif':
-                            iconSrc = '/static/assets/photo.png';
-                            break;
-                        default:
-                            iconSrc = '/static/assets/file.png';
-                    }
-                    target.append('<div class="file-item"><img class="file-icon pull-left" src="' + iconSrc + '"/><div class="file-name" title="' + fileList[i].name + '" data-id="'+list[i].id+'">' + fileList[i].name + '</div><i class="icon-remove-sign pull-right file-remove" title="删除"></i></div>');
-                }
-                targetInput.attr('data-id', fileIds);
+                var iconSrc = '/static/main/backend/assets/photo.png';
+                target.append('<div class="file-item" data-url="'+data.url+'"><img class="file-icon pull-left" src="' + iconSrc + '"/><div class="file-name" title="' + data.fileName + '" data-url="'+data.url+'">' + data.fileName + '</div><i class="icon-remove-sign pull-right file-remove" title="删除"></i></div>');
                 targetInput.val("已选择"+target.children('.file-item').length+"个文件");
                 target.next().hide();
             }else{
-                new PNotify({
-                    title: '文件上传失败！',
-                    text: '稍后再试',
-                    type: 'error',
-                    delay: 3000,
-                    addclass: "stack-bottomright",
-                    stack: stack_bottomright
-                });
+                layer.msg('文件上传失败');
             }
         }
     //    上传加载
@@ -93,9 +53,23 @@ $(function () {
             }
         }
         // 打开链接
-        xhr.open('POST', '/adjuncts/file_upload', true);
+        xhr.open('POST', '/adjuncts/ckeditor/file_upload', true);
         // 发送请求
         xhr.send(formData);
+    }).on('click','.file-remove',function (e) {
+        e.stopPropagation();
+        var $self = $(this);
+        layer.confirm('你确定删除该文件',{
+            btn:['确定','取消']
+        },function(){
+            var fileListDom=$self.parent();
+            var inputDom=fileListDom.parents('.file-content').prev('.input-group').children('input[type="text"]');
+            fileListDom.remove();
+            inputDom.val('');
+            layer.closeAll();
+        },function () {
+            layer.closeAll();
+        });
     })
     //提交表单
     function submitForm(e) {
@@ -124,7 +98,8 @@ $(function () {
         });
         postData['detail'] = content.getData();
         postData['tagid'] = parseInt(postData['tagid']);
-        postData['coverPicture'] = '';
+        postData['coverPicture'] = $('.file-item').eq(0).data('url');
+        console.log(postData);
         if(ajaxType === 'put') {
             postData['id'] = id
         }
