@@ -49,11 +49,11 @@ class ArticleView(BaseListView):
             if tagid:
                 dataset = dataset.filter(tagid=tagid)
             elif path_info == '/hot':  # 热门
-                dataset = dataset.filter(tagid=6)
+                dataset = dataset.filter(is_hot=1)
             elif path_info == '/ad':  # 广告
                 dataset = dataset.filter(tagid=7)
             elif path_info == '/carousel':  # 轮播图
-                dataset = dataset.filter(tagid=8)
+                dataset = dataset.filter(is_carousel=1)
             else:
                 dataset = dataset.filter(tagid__lte=6)
             return dataset
@@ -82,15 +82,20 @@ class ArticleDetailView(GenericAPIView):
             params = request.data['params']
             path_info = request.path_info
             if path_info == '/hot/detail':  # 热门
-                params['tagid'] = 6
+                params['is_hot'] = 1
+            else:
+                params['is_hot'] = 0
             if path_info == '/ad/detail':
                 params['tagid'] = 7
             if path_info == '/carousel/detail':
-                params['tagid'] = 8
+                params['is_carousel'] = 1
+            else:
+                params['is_carousel'] = 0
             in_date = timezone.now()
             article = Article.objects.create(title=params['title'], content=params['detail'],
                                              introduction=params['introduction'], in_date=in_date,
-                                             coverPicture=params['coverPicture'], tagid=params['tagid'])
+                                             coverPicture=params['coverPicture'], tagid=params['tagid'],
+                                             is_hot=params['is_hot'], is_carousel=params['is_carousel'])
             article.save()
             # 返回创建的文章对象
             data = self.get_serializer(article).data
@@ -103,17 +108,10 @@ class ArticleDetailView(GenericAPIView):
     def put(self, request):  # 修改文章
         try:
             params = request.data['params']
-            path_info = request.path_info
+            # path_info = request.path_info
             in_date = timezone.now()
             # 以下属性不允许修改
             id = params.pop('id')
-            # tag
-            if path_info == '/hot/detail':  # 热门
-                params['tagid'] = 6
-            if path_info == '/ad/detail':
-                params['tagid'] = 7
-            if path_info == '/carousel/detail':
-                params['tagid'] = 8
             # 获取文章
             article = self.queryset.get(id=id)
             for key, value in params.items():

@@ -24,6 +24,8 @@ class Article(models.Model):
     in_date = models.DateTimeField()  # 发布日期
     coverPicture = models.CharField(max_length=200)  # 封面图
     tagid = models.IntegerField(null=True)
+    is_hot = models.IntegerField(null=False, blank=False, default=0)
+    is_carousel = models.IntegerField(null=False, blank=False, default=0)
 
 
 class Tag(models.Model):

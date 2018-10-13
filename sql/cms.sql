@@ -223,7 +223,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -232,7 +232,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2018-10-06 12:37:56'),(2,'contenttypes','0002_remove_content_type_name','2018-10-06 12:37:57'),(3,'auth','0001_initial','2018-10-06 12:38:02'),(4,'auth','0002_alter_permission_name_max_length','2018-10-06 12:38:03'),(5,'auth','0003_alter_user_email_max_length','2018-10-06 12:38:03'),(6,'auth','0004_alter_user_username_opts','2018-10-06 12:38:03'),(7,'auth','0005_alter_user_last_login_null','2018-10-06 12:38:03'),(8,'auth','0006_require_contenttypes_0002','2018-10-06 12:38:03'),(9,'auth','0007_alter_validators_add_error_messages','2018-10-06 12:38:03'),(10,'auth','0008_alter_user_username_max_length','2018-10-06 12:38:04'),(11,'auth','0009_alter_user_last_name_max_length','2018-10-06 12:38:04'),(12,'sessions','0001_initial','2018-10-06 12:38:05'),(13,'main','0001_initial','2018-10-06 12:40:02'),(14,'main','0002_article_articletag_tag','2018-10-08 14:28:31'),(15,'main','0003_auto_20181009_1302','2018-10-09 13:03:03');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2018-10-06 12:37:56'),(2,'contenttypes','0002_remove_content_type_name','2018-10-06 12:37:57'),(3,'auth','0001_initial','2018-10-06 12:38:02'),(4,'auth','0002_alter_permission_name_max_length','2018-10-06 12:38:03'),(5,'auth','0003_alter_user_email_max_length','2018-10-06 12:38:03'),(6,'auth','0004_alter_user_username_opts','2018-10-06 12:38:03'),(7,'auth','0005_alter_user_last_login_null','2018-10-06 12:38:03'),(8,'auth','0006_require_contenttypes_0002','2018-10-06 12:38:03'),(9,'auth','0007_alter_validators_add_error_messages','2018-10-06 12:38:03'),(10,'auth','0008_alter_user_username_max_length','2018-10-06 12:38:04'),(11,'auth','0009_alter_user_last_name_max_length','2018-10-06 12:38:04'),(12,'sessions','0001_initial','2018-10-06 12:38:05'),(13,'main','0001_initial','2018-10-06 12:40:02'),(14,'main','0002_article_articletag_tag','2018-10-08 14:28:31'),(15,'main','0003_auto_20181009_1302','2018-10-09 13:03:03'),(16,'main','0004_auto_20181013_1459','2018-10-13 15:00:07');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,6 +278,8 @@ CREATE TABLE `main_article` (
   `in_date` datetime NOT NULL,
   `coverPicture` varchar(200) NOT NULL,
   `tagid` int(11) DEFAULT NULL,
+  `is_carousel` int(11) NOT NULL,
+  `is_hot` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -288,7 +290,7 @@ CREATE TABLE `main_article` (
 
 LOCK TABLES `main_article` WRITE;
 /*!40000 ALTER TABLE `main_article` DISABLE KEYS */;
-INSERT INTO `main_article` VALUES (1,'test1','content1','intro1',0,'2015-01-01 00:00:00','img_url1',0),(3,'test3','content3','intro3',0,'2015-01-01 00:00:00','img_url3',1),(4,'test4','content4','intro4',0,'2015-01-01 00:00:00','img_url4',2),(5,'test put article','detail','intro',0,'2018-10-08 15:39:17','picture',3),(6,'test ad','adad','intro',0,'2018-10-11 00:00:00','cover',7),(7,'test hot1','abc','intro',0,'2018-10-11 00:00:00','cover',6),(8,'test carousel','abc','intro',0,'2018-10-11 00:00:00','carousel',8),(9,'test article','content','intro',0,'2018-10-11 00:00:00','pic',4),(10,'test article','content','intro',0,'2018-10-11 00:00:00','pic',5),(11,'test ad2','adad2','intro',0,'2018-10-11 00:00:00','pic',7),(12,'test hot2','hothot','intro',0,'2018-10-11 00:00:00','hot',6),(13,'test carousel2','carousel2','intro',0,'2018-10-11 00:00:00','carousel',8);
+INSERT INTO `main_article` VALUES (1,'test1','content1','intro1',0,'2015-01-01 00:00:00','img_url1',0,0,0),(3,'test3','content3','intro3',0,'2015-01-01 00:00:00','img_url3',1,0,0),(4,'test4','content4','intro4',0,'2015-01-01 00:00:00','img_url4',2,0,0),(5,'test put article','detail','intro',0,'2018-10-08 15:39:17','picture',3,0,0),(6,'test ad','adad','intro',0,'2018-10-11 00:00:00','cover',7,0,0),(7,'test hot1','abc','intro',0,'2018-10-11 00:00:00','cover',1,0,1),(8,'test carousel','abc','intro',0,'2018-10-11 00:00:00','carousel',1,1,0),(9,'test article','content','intro',0,'2018-10-11 00:00:00','pic',4,0,0),(10,'test article','content','intro',0,'2018-10-11 00:00:00','pic',5,0,0),(11,'test ad2','adad2','intro',0,'2018-10-11 00:00:00','pic',7,0,0),(12,'test hot2','hothot','intro',0,'2018-10-11 00:00:00','hot',2,0,1),(13,'test carousel2','carousel2','intro',0,'2018-10-11 00:00:00','carousel',2,1,0);
 /*!40000 ALTER TABLE `main_article` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,4 +395,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-13 10:12:43
+-- Dump completed on 2018-10-13 15:07:44
