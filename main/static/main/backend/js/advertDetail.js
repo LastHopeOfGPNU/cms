@@ -5,7 +5,7 @@ $(function () {
     var id;
     var content;
     var ajaxType = 'post';
-    var url = '/article/detail';
+    var url = '/ad/detail';
     var $save = $('#save');
     var $form = $('#newForm');
     initPage();
@@ -97,7 +97,7 @@ $(function () {
             }
         });
         postData['detail'] = content.getData();
-        postData['tagid'] = parseInt(postData['tagid']);
+        // postData['tagid'] = parseInt(postData['tagid']);
         postData['coverPicture'] = $('.file-item').eq(0).data('url');
         console.log(postData);
         if(ajaxType === 'put') {
@@ -146,7 +146,7 @@ $(function () {
     //获取文章详情
     function getArticleDetail() {
         $.ajax({
-            url: '/article/detail?id='+ id,
+            url: '/ad/detail?id='+ id,
             type: 'get',
             dataType:'json',
             success:function (res) {

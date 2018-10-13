@@ -46,7 +46,7 @@ function responseHandler(res) {
     var data = res.data;
     for(var i = 0;i<data.length;i++) {
         data[i].in_date = data[i].in_date.replace('T','-');
-        data[i].href = '<a href="/admin/articleDetail?id='+data[i].id+'" target="_blank">'+data[i].title+'</a>'
+        data[i].href = '<a href="/admin/carouselDetail?id='+data[i].id+'" target="_blank">'+data[i].title+'</a>'
     }
     return {
         "total": res.total,

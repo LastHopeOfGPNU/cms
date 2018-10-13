@@ -97,6 +97,7 @@ $(function () {
             }
         });
         postData['detail'] = content.getData();
+        postData['tagid'] = parseInt(postData['tagid']);
         postData['coverPicture'] = $('.file-item').eq(0).data('url');
         console.log(postData);
         if(ajaxType === 'put') {

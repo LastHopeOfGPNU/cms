@@ -230,5 +230,5 @@ function openDetail() {
         layer.msg('请选择一项删除项');
         return ;
     }
-    window.open('/admin/articleDetail?id='+selector[0].id);
+    window.open('/admin/hotDetail?id='+selector[0].id);
 }

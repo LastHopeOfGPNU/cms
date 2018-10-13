@@ -46,7 +46,7 @@ function responseHandler(res) {
     var data = res.data;
     for(var i = 0;i<data.length;i++) {
         data[i].in_date = data[i].in_date.replace('T','-');
-        data[i].href = '<a href="/admin/articleDetail?id='+data[i].id+'" target="_blank">'+data[i].title+'</a>'
+        data[i].href = '<a href="/admin/advertDetail?id='+data[i].id+'" target="_blank">'+data[i].title+'</a>'
     }
     return {
         "total": res.total,
@@ -192,7 +192,7 @@ function showAddArticle() {
         shadeClose: false,
         shade: 0.8,
         area: ['800px', '90%'],
-        content: '/admin/articleDetail'
+        content: '/admin/advertDetail'
     });
     layer.full(index);
 }
@@ -222,4 +222,13 @@ function deleteArticle() {
             }
         }
     })
+}
+//打开详情页
+function openDetail() {
+    var selector = $table.bootstrapTable('getSelections');
+    if(selector.length > 1 || !selector.length) {
+        layer.msg('请选择一项删除项');
+        return ;
+    }
+    window.open('/admin/advertDetail?id='+selector[0].id);
 }
