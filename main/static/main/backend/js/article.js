@@ -227,7 +227,7 @@ function deleteArticle() {
 function openDetail() {
     var selector = $table.bootstrapTable('getSelections');
     if(selector.length > 1 || !selector.length) {
-        layer.msg('请选择一项删除项');
+        layer.msg('请选择一项');
         return ;
     }
     window.open('/admin/articleDetail?id='+selector[0].id);

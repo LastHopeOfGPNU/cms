@@ -192,7 +192,7 @@ function showAddArticle() {
         shadeClose: false,
         shade: 0.8,
         area: ['800px', '90%'],
-        content: '/admin/articleDetail'
+        content: '/admin/carouselDetail'
     });
     layer.full(index);
 }
@@ -222,4 +222,13 @@ function deleteArticle() {
             }
         }
     })
+}
+//打开轮播图
+function openDetail() {
+    var selector = $table.bootstrapTable('getSelections');
+    if(selector.length > 1 || !selector.length) {
+        layer.msg('请选择一项');
+        return ;
+    }
+    window.open('/admin/carouselDetail?id='+selector[0].id);
 }

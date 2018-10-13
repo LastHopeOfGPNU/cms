@@ -5,7 +5,7 @@ $(function () {
     var id;
     var content;
     var ajaxType = 'post';
-    var url = '/article/detail';
+    var url = '/carousel/detail';
     var $save = $('#save');
     var $form = $('#newForm');
     initPage();
