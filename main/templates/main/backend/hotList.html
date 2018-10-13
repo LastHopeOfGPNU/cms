@@ -1,10 +1,100 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0 user-scalable=no">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>反馈管理</title>
+    <!--<link rel="icon" href="../../static/assets/logo.png" type="image/x-icon">-->
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/bootstrap-3.3.7/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/css/variable.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/font/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/bootstrap-table.1.11.1/bootstrap-table.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/pnotify/pnotify.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/pnotify/pnotify.brighttheme.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/pnotify/pnotify.buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/css/common.css' %}">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/font/css/font-awesome-ie7.min.css' %}">
+    <![endif]-->
 </head>
 <body>
+<div id="main">
+    <div id="search-part" class="row" style="display: none">
+        <div id="search-form" name="search-form">
+            <div>
+                <div class="search-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">题目标题</label>
+                    <input id="title" class="search-control" type="text"/>
+                </div>
+                <div class="search-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">PID</label>
+                    <input id="problem_id" class="search-control" type="text"/>
+                </div>
+                <div class="search-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">题目类型</label>
+                    <select class="form-control" name="problem_type" id="problem_type">
+                        <option value=""></option>
+                        <option value="1">填空题</option>
+                        <option value="2">选择题</option>
+                        <option value="3">编程题</option>
+                        <option value="4">问答题</option>
+                        <option value="5">判断题</option>
+                    </select>
+                </div>
+                <div class="search-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">题目标签</label>
+                    <select class="form-control" name="tagid" id="tagid">
+                        <option value=""></option>
+                        {% for tag in tags %}
+                        <option value="{{ tag.tagid }}">{{ tag.tagname }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="serch-group col-sm-4 col-md-3 col-lg-3">
+                    <label class="search-label">题目从属</label>
+                    <select name="defunct" id="defunct" class="form-control">
+                        <option value=""></option>
+                        <option value="N">非竞赛题目</option>
+                        <option value="Y">竞赛题目</option>
+                        <option value="E">考试题目</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="data-part" class="clearfix">
+        <div id="toolbar" class="btn-toolbar">
+            <button class="btn btn-primary" onclick="showAddArticle()">添加热门 <i class="icon-zoom-in"></i></button>
+            <button class="btn btn-danger" onclick="deleteArticle()">删除热门 <i class="icon-remove"></i></button>
+            <!--<button id="search" type="button" class="btn btn-success btn-sm" style="display: none"><i class="icon-search"></i> <span>搜索</span></button>-->
+            <!--<button id="toggle-search" type="button" class="btn"><i class="icon-angle-down"></i> <span>展开搜索</span></button>-->
+        </div>
+        <table id="table" data-classes="table table-hover table-responsive table-sm">
+            <thead>
+            <tr>
+                <th data-checkbox="true" data-field="state"></th>
 
+                <th data-title="热门文章标题" data-field="href" data-align="center"></th>
+                <th data-title="发布日期" data-field="in_date" data-align="center"></th>
+                <th data-title="文章浏览数" data-field="view" data-align="center"></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<script src="{% static 'main/backend/plugin/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrap-table.1.11.1/bootstrap-table.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrap-table.1.11.1/locale/bootstrap-table-zh-CN.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/pnotify/pnotify.js' %}"></script>
+<script src="{% static 'main/backend/plugin/pnotify/pnotify.buttons.js' %}"></script>
+<script src="{% static 'main/backend/plugin/layer/layer.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrap-datetimepicker/js/moment.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+<script src="{% static 'main/backend/js/hotList.js' %}"></script>
 </body>
 </html>

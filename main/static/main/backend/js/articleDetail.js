@@ -161,6 +161,12 @@ $(function () {
         $('#title').val(data.title);
         $('#tagid').val(data.tagid);
         $('#introduction').val(data.introduction);
+        if(!!data.coverPicture) {
+            $('#fileInput').val('已选择1个文件');
+            var iconSrc = '/static/main/backend/assets/photo.png';
+            var len = data.coverPicture.split('/').length;
+            $('.file-list').append('<div class="file-item" data-url="'+data.coverPicture+'"><img class="file-icon pull-left" src="' + iconSrc + '"/><div class="file-name" title="' + data.coverPicture.split('/')[len-1] + '" data-url="'+data.url+'">' + data.coverPicture.split('/')[len-1] + '</div><i class="icon-remove-sign pull-right file-remove" title="删除"></i></div>')
+        }
         content.setData(data.content);
     }
     //获取页面id参数
