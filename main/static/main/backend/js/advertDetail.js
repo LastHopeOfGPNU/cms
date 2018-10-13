@@ -214,3 +214,20 @@ function getRequestObject(){
     }
     return xhr;
 }
+/*.on('click','.file-item .file-name',function (e) {
+        e.stopPropagation();
+        var id = $(this).data('id');
+        var name = $(this).text();
+        var suffix = name.split('.')[1];
+        if(suffix === 'png' || suffix === 'jpeg' || suffix === 'jpg' || suffix === 'gif') {
+            layer.open({
+                type: 1,
+                title: name,
+                shadeClose: true,
+                shade: 0.3,
+                area: ['80%', '80%'],
+                content: '<img src="'+'/adjuncts/file_download/'+id+'"/>'
+            });
+        } else {
+            window.open("/adjuncts/file_download/"+id);
+        }*/

@@ -79,21 +79,7 @@
                 }
             });
 
-        $("#owl-demo").owlCarousel({
-            autoPlay: true,
-            slideSpeed : 300,
-            paginationSpeed : 400,
-            stopOnHover : true,
-            singleItem:true
 
-            // "singleItem:true" is a shortcut for:
-            // items : 1,
-            // itemsDesktop : false,
-            // itemsDesktopSmall : false,
-            // itemsTablet: false,
-            // itemsMobile : false
-
-        });
 
 // 使用 on() 使 js 对通过 Ajax 获得的新内容仍有效
         $(".page-nav a").on("click", function(){

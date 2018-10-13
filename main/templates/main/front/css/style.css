@@ -706,6 +706,8 @@ hr {
 
     float: left;
 
+    cursor: pointer;
+
 }
 
 
@@ -3902,7 +3904,9 @@ nav.comment-nav a:hover {
 
 
 @media (min-width: 768px ) and (max-width: 1100px) {
-
+    .dd-img>a>img {
+        width:168px;
+    }
     .xss-hidden {
 
         display: none !important;
@@ -3951,7 +3955,9 @@ nav.comment-nav a:hover {
 
 
 @media (min-width: 1101px) {
-
+    .dd-img>a>img {
+        width:168px;
+    }
     .inner {
 
         width: 1100px;
