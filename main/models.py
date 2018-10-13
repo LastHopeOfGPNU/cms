@@ -23,7 +23,7 @@ class Article(models.Model):
     view = models.IntegerField(default=0)  # 浏览次数
     in_date = models.DateTimeField()  # 发布日期
     coverPicture = models.CharField(max_length=200)  # 封面图
-    tagid = models.IntegerField(null=True)
+    tagid = models.IntegerField(null=False, default=0)
     is_hot = models.IntegerField(null=False, blank=False, default=0)
     is_carousel = models.IntegerField(null=False, blank=False, default=0)
 
