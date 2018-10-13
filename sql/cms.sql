@@ -53,8 +53,8 @@ CREATE TABLE `auth_group_permissions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_group_permissions_group_id_permission_id_0cd325b0_uniq` (`group_id`,`permission_id`),
   KEY `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` (`permission_id`),
-  CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
-  CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
+  CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
+  CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -170,8 +170,8 @@ CREATE TABLE `auth_user_user_permissions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_user_user_permissions_user_id_permission_id_14a6b632_uniq` (`user_id`,`permission_id`),
   KEY `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` (`permission_id`),
-  CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
-  CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
+  CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
+  CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -279,7 +279,7 @@ CREATE TABLE `main_article` (
   `coverPicture` varchar(200) NOT NULL,
   `tagid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,7 +288,7 @@ CREATE TABLE `main_article` (
 
 LOCK TABLES `main_article` WRITE;
 /*!40000 ALTER TABLE `main_article` DISABLE KEYS */;
-INSERT INTO `main_article` VALUES (1,'test1','content1','intro1',0,'2015-01-01 00:00:00','img_url1',0),(3,'test3','content3','intro3',0,'2015-01-01 00:00:00','img_url3',1),(4,'test4','content4','intro4',0,'2015-01-01 00:00:00','img_url4',2),(5,'test put article','detail','intro',0,'2018-10-08 15:39:17','picture',3);
+INSERT INTO `main_article` VALUES (1,'test1','content1','intro1',0,'2015-01-01 00:00:00','img_url1',0),(3,'test3','content3','intro3',0,'2015-01-01 00:00:00','img_url3',1),(4,'test4','content4','intro4',0,'2015-01-01 00:00:00','img_url4',2),(5,'test put article','detail','intro',0,'2018-10-08 15:39:17','picture',3),(6,'test ad','adad','intro',0,'2018-10-11 00:00:00','cover',7),(7,'test hot1','abc','intro',0,'2018-10-11 00:00:00','cover',6),(8,'test carousel','abc','intro',0,'2018-10-11 00:00:00','carousel',8),(9,'test article','content','intro',0,'2018-10-11 00:00:00','pic',4),(10,'test article','content','intro',0,'2018-10-11 00:00:00','pic',5),(11,'test ad2','adad2','intro',0,'2018-10-11 00:00:00','pic',7),(12,'test hot2','hothot','intro',0,'2018-10-11 00:00:00','hot',6),(13,'test carousel2','carousel2','intro',0,'2018-10-11 00:00:00','carousel',8);
 /*!40000 ALTER TABLE `main_article` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -330,7 +330,7 @@ CREATE TABLE `main_tag` (
   `tagid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `tagid` (`tagid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,7 +339,7 @@ CREATE TABLE `main_tag` (
 
 LOCK TABLES `main_tag` WRITE;
 /*!40000 ALTER TABLE `main_tag` DISABLE KEYS */;
-INSERT INTO `main_tag` VALUES (3,'营销观点',0),(4,'营销策略',1),(5,'实战案例',2),(6,'营销文案',3),(7,'社交新零售',4),(8,'转型王道',5),(9,'热门',6),(10,'广告',7);
+INSERT INTO `main_tag` VALUES (3,'营销观点',0),(4,'营销策略',1),(5,'实战案例',2),(6,'营销文案',3),(7,'社交新零售',4),(8,'转型王道',5),(9,'热门',6),(10,'广告',7),(11,'轮播图',8);
 /*!40000 ALTER TABLE `main_tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,4 +393,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-09 13:14:11
+-- Dump completed on 2018-10-13 10:12:43
