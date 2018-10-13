@@ -196,3 +196,34 @@ function showAddArticle() {
     });
     layer.full(index);
 }
+//父级刷新
+function refreshAndShowMessage(options){
+    layer.msg(options);
+    $('#table').bootstrapTable('refresh');
+}
+//删除文章
+function deleteArticle() {
+    var selector = $table.bootstrapTable('getSelections');
+    if(selector.length > 1 || !selector.length) {
+        layer.msg('请选择一项删除项');
+        return ;
+    }
+    var postData = {
+        "params" : {
+            "id": selector[0].id
+        }
+    }
+    $.ajax({
+        url: '/article',
+        type: 'DELETE',
+        contentType: 'application/json;charset=utf-8',
+        data: JSON.stringify(postData),
+        success: function (res) {
+            if(res.success === true) {
+                layer.msg('删除成功');
+            } else{
+                layer.msg('删除失败，请稍后再试');
+            }
+        }
+    })
+}
