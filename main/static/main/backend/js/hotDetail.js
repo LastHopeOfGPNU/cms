@@ -5,7 +5,7 @@ $(function () {
     var id;
     var content;
     var ajaxType = 'post';
-    var url = '/article/detail';
+    var url = '/hot/detail';
     var $save = $('#save');
     var $form = $('#newForm');
     initPage();
@@ -97,7 +97,6 @@ $(function () {
             }
         });
         postData['detail'] = content.getData();
-        postData['tagid'] = parseInt(postData['tagid']);
         postData['coverPicture'] = $('.file-item').eq(0).data('url');
         console.log(postData);
         if(ajaxType === 'put') {
