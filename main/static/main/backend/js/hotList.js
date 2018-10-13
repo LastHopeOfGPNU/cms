@@ -1,5 +1,5 @@
 /**
- * Created by mu-HUN on 2018/10/8.
+ * Created by yjq on 2018/10/13.
  */
 var $table = $("#table");
 var editor;
@@ -13,7 +13,7 @@ function initPage() {
     $table.bootstrapTable({
         height: getHeight,
         toolbar: "#toolbar",
-        url: '/article',//异步请求的链接
+        url: '/hot',//异步请求的链接
         method: 'get',
         // sortOrder: 'desc',//排序方式
         responseHandler: responseHandler,//对回调数据进行处理
@@ -214,7 +214,7 @@ function deleteArticle() {
         }
     }
     $.ajax({
-        url: '/article',
+        url: '/hot',
         type: 'DELETE',
         contentType: 'application/json;charset=utf-8',
         data: JSON.stringify(postData),

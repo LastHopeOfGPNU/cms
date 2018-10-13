@@ -29,6 +29,9 @@ urlpatterns = [
     path('admin/login', login, name='admin_login'),
     path('admin/test', test, name="admin_test"),
     path('admin/article', article, name="admin_article"),
+    path('admin/hotList', hotList, name="admin_hotList"),
+    path('admin/advert', advert, name="admin_advert"),
+    path('admin/carouselList', carouselList, name="admin_carouselList"),
     path('admin/articleDetail', articleDetail, name="admin_articleDetail"),
 
     # 前端页面

@@ -68,8 +68,8 @@
     </div>
     <div id="data-part" class="clearfix">
         <div id="toolbar" class="btn-toolbar">
-            <button class="btn btn-primary" onclick="showAddArticle()">添加文章 <i class="icon-zoom-in"></i></button>
-            <button class="btn btn-danger" onclick="deleteArticle()">删除文章 <i class="icon-remove"></i></button>
+            <button class="btn btn-primary" onclick="showAddArticle()">添加热门 <i class="icon-zoom-in"></i></button>
+            <button class="btn btn-danger" onclick="deleteArticle()">删除热门 <i class="icon-remove"></i></button>
             <!--<button id="search" type="button" class="btn btn-success btn-sm" style="display: none"><i class="icon-search"></i> <span>搜索</span></button>-->
             <!--<button id="toggle-search" type="button" class="btn"><i class="icon-angle-down"></i> <span>展开搜索</span></button>-->
         </div>
@@ -78,7 +78,7 @@
             <tr>
                 <th data-checkbox="true" data-field="state"></th>
 
-                <th data-title="文章标题" data-field="href" data-align="center"></th>
+                <th data-title="热门文章标题" data-field="href" data-align="center"></th>
                 <th data-title="发布日期" data-field="in_date" data-align="center"></th>
                 <th data-title="文章浏览数" data-field="view" data-align="center"></th>
             </tr>
@@ -95,6 +95,6 @@
 <script src="{% static 'main/backend/plugin/layer/layer.js' %}"></script>
 <script src="{% static 'main/backend/plugin/bootstrap-datetimepicker/js/moment.js' %}"></script>
 <script src="{% static 'main/backend/plugin/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
-<script src="{% static 'main/backend/js/article.js' %}"></script>
+<script src="{% static 'main/backend/js/advert.js' %}"></script>
 </body>
 </html>
