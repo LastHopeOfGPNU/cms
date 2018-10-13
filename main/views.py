@@ -28,9 +28,22 @@ def hotList(request):
 def advert(request):
     return render(request, 'main/backend/advert.html')
 
+
 def carouselList(request):
     return render(request, 'main/backend/carouselList.html')
 
 
 def articleDetail(request):
     return render(request, 'main/backend/articleDetail.html')
+
+
+def hotDetail(request):
+    return render(request, 'main/backend/hotDetail.html')
+
+
+def advertDetail(request):
+    return render(request, 'main/backend/advertDetail.html')
+
+
+def carouselDetail(request):
+    return render(request, 'main/backend/carouselDetail.html')

@@ -208,19 +208,15 @@ function deleteArticle() {
         layer.msg('请选择一项删除项');
         return ;
     }
-    var postData = {
-        "params" : {
-            "id": selector[0].id
-        }
-    }
     $.ajax({
-        url: '/hot',
+        url: '/hot?id='+selector[0].id,
         type: 'DELETE',
         contentType: 'application/json;charset=utf-8',
-        data: JSON.stringify(postData),
         success: function (res) {
             if(res.success === true) {
                 layer.msg('删除成功');
+                $table.bootstrapTable('refresh');
+                return ;
             } else{
                 layer.msg('删除失败，请稍后再试');
             }

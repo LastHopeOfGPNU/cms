@@ -1,10 +1,92 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0 user-scalable=no">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>文章详情</title>
+    <!--<link rel="icon" href="../../static/assets/logo.png" type="image/x-icon">-->
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/bootstrap-3.3.7/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/font/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/bootstrapValidator/css/bootstrapValidator.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/pnotify/pnotify.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/pnotify/pnotify.brighttheme.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/pnotify/pnotify.buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/css/common.css' %}">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/font/css/font-awesome-ie7.min.css' %}">
+    <![endif]-->
 </head>
 <body>
-
+<div id="main">
+	<div style="display: block">
+		<button id="close" class="btn btn-sm btn-default"><i class="icon-arrow-left"></i> 关闭</button>
+		<button id="save" type="button" class="btn btn-sm btn-primary"><i class="icon-save"></i> 保存</button>
+	</div>
+	<div style="margin-top: 30px" class="container-fluid">
+		<div class="panel-box">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">文章详情</h3>
+				</div>
+				<div class="panel-body" id="fillBlanks">
+					<form id="newForm" name="newForm">
+						<div class="form-group form-group-sm">
+							<label for="title">文章标题</label>
+							<input type="text" id="title" name="title" class="form-control" required>
+						</div>
+                        <div class="form-group form-group-sm">
+							<label for="tagid">文章分类</label>
+							<select class="form-control select2" name="tagid" id="tagid" required>
+                                <option value=0>营销观点</option>
+                                <option value=1>营销策略</option>
+                                <option value=2>实战案例</option>
+                                <!--<option value="0"></option>-->
+								<!--{% for tag in tags %}
+								<option value="{{ tag.tagid }}">{{ tag.tagname }}</option>
+								{% endfor %}-->
+							</select>
+						</div>
+                        <div class="form-group form-group-sm">
+							<label for="introduction">简介</label>
+							<textarea id="introduction" class="ckEditor form-control" name="introduction" rows="10"></textarea>
+						</div>
+                        <div class="form-group form-group-sm">
+							<label for="content">文章内容</label>
+							<textarea id="content" class="ckEditor form-control" name="detail" rows="10" required></textarea>
+						</div>
+                        <div class="form-group form-group-sm" id="sampleFile">
+							<label for="sampleFile">封面图片</label> <!--<span style="color:#FF3333;font-size:18px">*</span>-->
+							<input type="file" class="form-control" id="file" style="display: none" placeholder="未选择任何文件">
+							<div class="input-group">
+								<input type="text" class="form-control" id="fileInput" style="background-color:#f0f0f0" placeholder="未选择任何文件" readonly>
+								<span class="input-group-addon choose" onclick="upLoading('#file')"><i class="icon-file"></i></span>
+							</div>
+							<div class="file-content col-sm-12">
+								<div class="file-list"></div>
+								<div class="progress-container" style="padding: 5px 10px;background-color: #f0f0f0;display: none;">
+									<div class="progress progress-striped" style="margin: 0;height: 10px;">
+										<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{% static 'main/backend/plugin/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrapValidator/js/bootstrapValidator.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrapValidator/js/language/zh_CN.js' %}"></script>
+<script src="{% static 'main/backend/plugin/pnotify/pnotify.js' %}"></script>
+<script src="{% static 'main/backend/plugin/pnotify/pnotify.buttons.js' %}"></script>
+<script src="{% static 'main/backend/plugin/layer/layer.js' %}"></script>
+<script src="{% static 'main/backend/plugin/ckeditor/ckeditor.js' %}"></script>
+<script src="{% static 'main/backend/js/articleDetail.js' %}"></script>
 </body>
 </html>
