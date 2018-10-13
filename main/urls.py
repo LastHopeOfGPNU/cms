@@ -33,6 +33,9 @@ urlpatterns = [
     path('admin/advert', advert, name="admin_advert"),
     path('admin/carouselList', carouselList, name="admin_carouselList"),
     path('admin/articleDetail', articleDetail, name="admin_articleDetail"),
+    path('admin/hotDetail', hotDetail, name="admin_hotDetail"),
+    path('admin/advertDetail', advertDetail, name="admin_advertDetail"),
+    path('admin/carouselDetail', carouselDetail, name="admin_carouselDetail"),
 
     # 前端页面
     path('index', index, name='index')

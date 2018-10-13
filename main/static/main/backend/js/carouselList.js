@@ -46,7 +46,7 @@ function responseHandler(res) {
     var data = res.data;
     for(var i = 0;i<data.length;i++) {
         data[i].in_date = data[i].in_date.replace('T','-');
-        data[i].href = '<a href="/admin/articleDetail?id='+data[i].id+'" target="_blank">'+data[i].title+'</a>'
+        data[i].href = '<a href="/admin/carouselDetail?id='+data[i].id+'" target="_blank">'+data[i].title+'</a>'
     }
     return {
         "total": res.total,
@@ -192,7 +192,7 @@ function showAddArticle() {
         shadeClose: false,
         shade: 0.8,
         area: ['800px', '90%'],
-        content: '/admin/articleDetail'
+        content: '/admin/carouselDetail'
     });
     layer.full(index);
 }
@@ -208,22 +208,27 @@ function deleteArticle() {
         layer.msg('请选择一项删除项');
         return ;
     }
-    var postData = {
-        "params" : {
-            "id": selector[0].id
-        }
-    }
     $.ajax({
-        url: '/carousel',
+        url: '/carousel?id='+selector[0].id,
         type: 'DELETE',
         contentType: 'application/json;charset=utf-8',
-        data: JSON.stringify(postData),
         success: function (res) {
             if(res.success === true) {
                 layer.msg('删除成功');
+                $table.bootstrapTable('refresh');
+                return ;
             } else{
                 layer.msg('删除失败，请稍后再试');
             }
         }
     })
+}
+//打开轮播图
+function openDetail() {
+    var selector = $table.bootstrapTable('getSelections');
+    if(selector.length > 1 || !selector.length) {
+        layer.msg('请选择一项');
+        return ;
+    }
+    window.open('/admin/carouselDetail?id='+selector[0].id);
 }
