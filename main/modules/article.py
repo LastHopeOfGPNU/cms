@@ -18,7 +18,7 @@ class ImageView(GenericAPIView):
          {"uploaded":0, "error":{"message":"失败原因"}}
         """
         upload_path = 'main/static/main/images/'
-        url = 'static/main/images/'
+        url = '/static/main/images/'
         success = {"uploaded": 1, "fileName": "图片名称", "url": "图片访问路径"}
         fail = {"uploaded": 0, "error": {"message": "失败原因"}}
         try:
@@ -48,12 +48,14 @@ class ArticleView(BaseListView):
             dataset = self.queryset.order_by('-id')
             if tagid:
                 dataset = dataset.filter(tagid=tagid)
-            if path_info == '/hot':  # 热门
+            elif path_info == '/hot':  # 热门
                 dataset = dataset.filter(tagid=6)
-            if path_info == '/ad':  # 广告
+            elif path_info == '/ad':  # 广告
                 dataset = dataset.filter(tagid=7)
-            if path_info == '/carousel':  # 轮播图
+            elif path_info == '/carousel':  # 轮播图
                 dataset = dataset.filter(tagid=8)
+            else:
+                dataset = dataset.filter(tagid__lte=6)
             return dataset
         except Exception as e:
             print(e.__repr__())
