@@ -109,6 +109,7 @@ class ArticleDetailView(GenericAPIView):
         try:
             params = request.data['params']
             # path_info = request.path_info
+            params['content'] = params['detail']
             in_date = timezone.now()
             # 以下属性不允许修改
             id = params.pop('id')
