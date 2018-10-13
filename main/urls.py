@@ -14,6 +14,15 @@ urlpatterns = [
     # 文章api
     path('article', ArticleView.as_view(), name='article'),
     path('article/detail', ArticleDetailView.as_view(), name='article_detail'),
+    # 轮播api
+    path('carousel', ArticleView.as_view(), name='carousel'),
+    path('carousel/detail', ArticleDetailView.as_view(), name='carousel_detail'),
+    # 广告api
+    path('ad', ArticleView.as_view(), name='ad'),
+    path('ad/detail', ArticleDetailView.as_view(), name='ad_detail'),
+    # 热门api
+    path('hot', ArticleView.as_view(), name='hot'),
+    path('hot/detail', ArticleDetailView.as_view(), name='hot_detail'),
 
     # 后台页面
     path('admin', admin, name='admin'),

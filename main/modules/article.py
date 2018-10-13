@@ -43,10 +43,17 @@ class ArticleView(BaseListView):
     # 文章接口（List）
     def get_dataset(self, request):
         tagid = request.GET.get('tagid', None)
+        path_info = request.path_info
         try:
             dataset = self.queryset.order_by('-id')
             if tagid:
                 dataset = dataset.filter(tagid=tagid)
+            if path_info == '/hot':  # 热门
+                dataset = dataset.filter(tagid=6)
+            if path_info == '/ad':  # 广告
+                dataset = dataset.filter(tagid=7)
+            if path_info == '/carousel':  # 轮播图
+                dataset = dataset.filter(tagid=8)
             return dataset
         except Exception as e:
             print(e.__repr__())
@@ -71,6 +78,13 @@ class ArticleDetailView(GenericAPIView):
     def post(self, request):  # 添加文章
         try:
             params = request.data['params']
+            path_info = request.path_info
+            if path_info == '/hot/detail':  # 热门
+                params['tagid'] = 6
+            if path_info == '/ad/detail':
+                params['tagid'] = 7
+            if path_info == '/carousel/detail':
+                params['tagid'] = 8
             in_date = timezone.now()
             article = Article.objects.create(title=params['title'], content=params['detail'],
                                              introduction=params['introduction'], in_date=in_date,
@@ -87,11 +101,17 @@ class ArticleDetailView(GenericAPIView):
     def put(self, request):  # 修改文章
         try:
             params = request.data['params']
+            path_info = request.path_info
             in_date = timezone.now()
             # 以下属性不允许修改
             id = params.pop('id')
-            # tag另作处理
-            tagid = params.pop('tagid', None)
+            # tag
+            if path_info == '/hot/detail':  # 热门
+                params['tagid'] = 6
+            if path_info == '/ad/detail':
+                params['tagid'] = 7
+            if path_info == '/carousel/detail':
+                params['tagid'] = 8
             # 获取文章
             article = self.queryset.get(id=id)
             for key, value in params.items():
