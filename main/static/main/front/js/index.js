@@ -203,6 +203,7 @@ function getNewArticlePage(page, navId) {
     });
 }
 $(function () {
+
     $("img").lazyload({
         effect:"fadeIn"
     });
@@ -245,8 +246,32 @@ $(function () {
         pageIndex++;
         getNewArticlePage(pageIndex);
     });
-    $(".menu-button").click(function(e) {$(".menu-mini-nav").slideToggle(); } )
-    getNewArticlePage(pageIndex);
+    $(".menu-button").click(function(e) {$(".menu-mini-nav").slideToggle(); } );
+    var url = location.search;
+    var menu = url.split('=')[1];
+    if(!!menu) {
+        nav = menu;
+        var index = parseInt(nav)+1;
+        console.log(nav);
+        $('.header-menu-nav>li.current-menu-item').removeClass('current-menu-item');
+        $('#mini-nav>li.current-menu-item').removeClass('current-menu-item');
+        $('#main-nav>li').eq(index).addClass('current-menu-item');
+        $('#fixed-nav>li').eq(index).addClass('current-menu-item');
+        $('#fixed-list>li').eq(index).addClass('current-menu-item');
+        $('#mini-nav>li').eq(index).addClass('current-menu-item');
+        $('.top-list').hide();
+        $('.daodu').hide();
+        $('.tip').hide();
+        $('.cat-title').show();
+        if (nav === 0) {
+            $('.cat-title>h1').text('营销观点')
+        }else if(nav === 1) {
+            $('.cat-title>h1').text('营销策略');
+        }else if(nav === 2) {
+            $('.cat-title>h1').text('实战案例');
+        }
+        getNewArticlePage(pageIndex, nav);
+    }
     getAdvertData();
     getRecentArticle();
     getHotArticle();
