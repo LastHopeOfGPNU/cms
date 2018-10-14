@@ -254,3 +254,10 @@ input[type="number"]{-moz-appearance: textfield;}
     margin-right: 20px;
     font-size: 16px;
 }
+.user-avatar {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}

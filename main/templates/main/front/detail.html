@@ -83,10 +83,10 @@
         <div class="inner clr">
             <nav class="left-nav clr">
                 <ul id="main-nav" class="header-menu-nav">
-                    <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a>首页</a></li>
-                    <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销观点</a></li>
-                    <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销策略</a></li>
-                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>实战案例</a></li>
+                    <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home"><a href="/index">首页</a></li>
+                    <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">营销观点</a></li>
+                    <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">营销策略</a></li>
+                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">实战案例</a></li>
                 </ul>
             </nav>
         </div>
@@ -96,10 +96,10 @@
         <div class="inner clr">
             <div class="left-nav clr">
                 <ul id="fixed-nav" class="header-menu-nav">
-                    <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a>首页</a></li>
-                    <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销观点</a></li>
-                    <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销策略</a></li>
-                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>实战案例</a></li>
+                    <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home"><a href="/index">首页</a></li>
+                    <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">营销观点</a></li>
+                    <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">营销策略</a></li>
+                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">实战案例</a></li>
                 </ul>
             </div>
         </div>
@@ -108,12 +108,12 @@
             <div class="inner clr">
                 <nav class="left-nav clr">
                     <ul id="fixed-list" class="header-menu-nav">
-                        <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                            <a>首页</a>
+                        <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home">
+                            <a href="/index">首页</a>
                         </li>
-                        <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销观点</a></li>
-                        <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销策略</a></li>
-                        <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>实战案例</a></li>
+                        <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">营销观点</a></li>
+                        <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">营销策略</a></li>
+                        <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">实战案例</a></li>
                     </ul>
                 </nav>
             </div>
@@ -121,92 +121,74 @@
     </div>
     <nav class="mini-nav visible-xs">
         <ul id="mini-nav" class="menu-mini-nav">
-            <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a>首页</a></li>
-            <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销观点</a></li>
-            <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销策略</a></li>
-            <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>实战案例</a></li>
+            <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="/index">首页</a></li>
+            <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">营销观点</a></li>
+            <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">营销策略</a></li>
+            <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">实战案例</a></li>
         </ul>
     </nav>
 </header>
 <section class="xs-main index-main clr">
     <div class="inner">
         <div class="xs-left">
-            <div class="cat-title" style="display:none;">
-                <h1>营销观点 </h1>
-                <p class="des"></p>
-            </div>
-            <div class="top-list clr">
-                <div class="slider">
-                    <div id="owl-demo" class="owl-carousel owl-theme">
-                    </div>
-                </div>
-                <div class="tt xs-hidden headlinesArticle">
-                    <div class="s-title"><img src="{% static 'main/front/img/hotlists-tip.jpg' %}" alt="" style=""></div>
-                    <ul>
-                    </ul>
-                </div>
-                <meta name="description" content="描述文">
-                <meta name="keywords" content="关键字">
-            </div>
-            <div class="daodu clr">
-                <div class="tip">
-                    <h4>
-                        <span class="yel">精选</span>
-                        <span class="gra">导读</span>
-                    </h4>
-                </div>
-                <ul class="dd-list">
-                </ul>
-            </div>
-            <div class="content-ajax">
-                <div class="tip">
-                    <h4>
-                        <span class="yel">最新</span>
-                        <span class="gra">资讯</span>
-                    </h4>
-                    <div style="display: none" class="count xs-hidden">
-                        <i></i>
-                        今日更新<strong>0</strong>篇
-                        <em></em>
-                    </div>
-                </div>
-            </div>
-            <div id="pagenavi">
-                <a class="page-up">上一页</a>
-                <a class="page-down">下一页</a>
-            </div>
+            <nav class="crumbs">现在位置： <a title="返回首页" href="/index">首页</a> &gt; <a href="" class="nav-tag" rel="category tag">营销观点</a> &gt;  正文 </nav>
+            <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy category-siwei">
+				<header class="single-header">
+					<h1></h1>
+					<div class="single-meta">
+						<div class="time"><i></i> <a href="javascript:void(0);"></a></div>
+						<div class="touxiang">
+							<a href="http://www.chenxincheng.com/author/xiaoming">
+								<img alt="陈信诚" src="{% static 'main/front/img/cs.jpg' %}" class="avatar avatar-26 photo" height="26" width="26">
+								<span>陈信诚</span>
+							</a>
+						</div>
+						<div class="eye xs-hidden"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;<a href="javascript:void(0);">- views</a> </div>
+					</div>
+				</header>
+                <div class="single-main">
+					<blockquote id="introduction" style="font-size:16px;background-color:#F7F7F7;color:#2F2F2F;">
+						<p></p>
+					</blockquote>
+				</div>
+			</article>
         </div>
         <div class="xs-right sidebar xs-hidden xss-hidden">
-            <div id="g-sidebar-top" class="ad">
-                <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" alt=""></a>
-            </div>
-            <aside class="date">
-                <div class="si-title">
-                    <h2>即将上市，敬请关注！</h2>
-                </div>
-                <ul></ul>
-            </aside>
+            <div class="authorbox">
+				<div class="author-top">
+					<div id="author-img">
+						<img alt="" src="{% static 'main/front/img/cs.jpg' %}" class="avatar avatar-96 photo" height="96" width="96">
+					</div>
+					<div class="au-name">
+						<a href="http://www.chenxincheng.com/author/xiaoming" title="由陈信诚发布" rel="author">陈信诚</a><br>
+						<span class="au-title">总共91篇文章</span>
+					</div> </div>
+				<div class="author-word"><span class="quotes q1"></span>
+					营销作家，移动社交电商专家。私人微信：10532468。	<span class="quotes q2"></span></div>
+			</div>
             <aside class="widget-container widget_text">
-                <div class="si-title"><h2>限时免费领取</h2></div>
-                <div class="textwidget">
-                    <img src="#" border="0" width="158" height="158" alt="">
-                    <script></script>
-                </div>
-            </aside>
-            <aside id="rencent-posts" class="widget-container widget_recent_entries">
-                <div class="si-title">
-                    <h2>近期文章</h2>
-                </div>
-                <ul>
-                </ul>
-                <aside id="hot_post" class="widget-container widget_hot_post">
-                    <div class="si-title">
-                        <h2>热门文章</h2>
-                    </div>
-                    <ul class="remen">
-                    </ul>
-                </aside>
-            </aside>
+				<div class="si-title">
+					<h2>关注方式</h2>
+				</div>
+				<div class="textwidget">
+					<div id="Layer1" style="display:none">
+						<img src="{% static 'main/front/img/cs.jpg' %}">
+					</div>
+					<p>
+						<a onmouseover="Layer1.style.display=''" onmouseout="Layer1.style.display='none';">微信订阅号</a>
+						<br>
+						<a title="新浪微博" target="_blank" href="http://weibo.com/234039030">新浪微博</a>
+						<br>
+						<a title="联系QQ" target="_blank" href="http://sighttp.qq.com/authd?IDKEY=41a714ab92892919ed66f8eeebc70cbef0cffb0e40f3377f">联系QQ</a>
+					</p>
+				</div>
+			</aside>
+            <aside class="widget-container widget_text">
+				<div class="si-title"><h2>个人微信</h2></div>
+				<div class="textwidget">
+					<img src="{% static 'main/front/img/cs.jpg' %}" border="0" width="128" height="128">
+				</div>
+			</aside>
         </div>
     </div>
 </section>
@@ -280,8 +262,7 @@
     <div id="shang" title="↑ 返回顶部"></div>
     <div id="xia" title="↓ 移至底部"></div>
 </div>
-<script src="{% static 'main/front/js/index.js' %}"></script>
-<script type="text/javascript" src="{% static 'main/front/plugin/owlcarousel/js/owl.carousel.js' %}"></script>
+<script src="{% static 'main/front/js/detail.js' %}"></script>
 <script type="text/javascript" src="{% static 'main/front/plugin/owlcarousel/js/custom.js' %}"></script>
 </body>
 </html>

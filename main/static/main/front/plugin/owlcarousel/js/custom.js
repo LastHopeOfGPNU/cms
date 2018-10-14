@@ -12,7 +12,6 @@
                 $('.nav-bg').hide()
             });
         $(window).scroll(function(){ if($(this).scrollTop()>130){$(".fixed").css("display","block")}else{$(".fixed").css("display","none")}})
-        $(".menu-button").click(function() {$(".menu-mini-nav").slideToggle(); } )
         $(".date ul li").first().addClass("hov");
         $(".logindiv").hover(function(){$(this).addClass("hover");$(".login-links").css("display","block");},function(){$(this).removeClass("hover");$(".login-links").css("display","none")})
         $(".date ul li").hover(function(){$(this).addClass("hov").siblings().removeClass("hov");})
@@ -79,21 +78,7 @@
                 }
             });
 
-        $("#owl-demo").owlCarousel({
-            autoPlay: true,
-            slideSpeed : 300,
-            paginationSpeed : 400,
-            stopOnHover : true,
-            singleItem:true
 
-            // "singleItem:true" is a shortcut for:
-            // items : 1,
-            // itemsDesktop : false,
-            // itemsDesktopSmall : false,
-            // itemsTablet: false,
-            // itemsMobile : false
-
-        });
 
 // 使用 on() 使 js 对通过 Ajax 获得的新内容仍有效
         $(".page-nav a").on("click", function(){

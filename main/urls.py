@@ -27,7 +27,6 @@ urlpatterns = [
     # 后台页面
     path('admin', admin, name='admin'),
     path('admin/login', login, name='admin_login'),
-    path('admin/test', test, name="admin_test"),
     path('admin/article', article, name="admin_article"),
     path('admin/hotList', hotList, name="admin_hotList"),
     path('admin/advert', advert, name="admin_advert"),
@@ -36,7 +35,9 @@ urlpatterns = [
     path('admin/hotDetail', hotDetail, name="admin_hotDetail"),
     path('admin/advertDetail', advertDetail, name="admin_advertDetail"),
     path('admin/carouselDetail', carouselDetail, name="admin_carouselDetail"),
+    path('admin/userInfo', userInfo, name="admin_userInfo"),
 
     # 前端页面
-    path('index', index, name='index')
+    path('index', index, name='index'),
+    path('front/article', frontArticle, name='article')
 ]
