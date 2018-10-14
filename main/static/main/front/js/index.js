@@ -252,7 +252,6 @@ $(function () {
     if(!!menu) {
         nav = menu;
         var index = parseInt(nav)+1;
-        console.log(nav);
         $('.header-menu-nav>li.current-menu-item').removeClass('current-menu-item');
         $('#mini-nav>li.current-menu-item').removeClass('current-menu-item');
         $('#main-nav>li').eq(index).addClass('current-menu-item');
