@@ -7,6 +7,7 @@ from hashlib import md5
 from time import time
 import os
 from cms.settings import STATIC_ROOT
+from urllib.parse import urljoin
 
 
 def create_user(username, password):
@@ -88,6 +89,7 @@ class UploadAvatarView(GenericAPIView):
 
     def post(self, request):
         try:
+            url = '/static/main/images/'
             file = request.FILES['file']
             user = get_user_from_session(request)
             path = os.path.join(STATIC_ROOT, 'main')
@@ -95,7 +97,7 @@ class UploadAvatarView(GenericAPIView):
             filename = os.path.join(path, img_name)
             with open(filename, 'wb') as img:
                 for line in file: img.write(line)
-            user.avatar_url = '/' + STATIC_ROOT + img_name
+            user.avatar_url = urljoin(url, img.name)
             user.save()
             return Response({'data': user.avatar_url, 'success': True, 'msg': ''})
         except Exception as e:
