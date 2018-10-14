@@ -89,7 +89,7 @@ class UploadAvatarView(GenericAPIView):
 
     def post(self, request):
         try:
-            url = '/static/main/images/'
+            url = '/static/main/'
             file = request.FILES['file']
             user = get_user_from_session(request)
             path = os.path.join(STATIC_ROOT, 'main')
