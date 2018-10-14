@@ -84,11 +84,11 @@
     <div class="main-nav xs-hidden">
         <div class="inner clr">
             <nav class="left-nav clr">
-                <ul class="header-menu-nav">
+                <ul id="main-nav" class="header-menu-nav">
                     <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a>首页</a></li>
                     <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销观点</a></li>
                     <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销策略</a></li>
-                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>实战</a></li>
+                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>实战案例</a></li>
                 </ul>
             </nav>
         </div>
@@ -97,18 +97,11 @@
     <div class="fixed xs-hidden">
         <div class="inner clr">
             <div class="left-nav clr">
-                <ul class="header-menu-nav">
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="#">首页</a></li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="#">营销观点</a></li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="#">营销策略</a></li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="#">实战</a></li>
-                </ul>
-            </div>
-            <div class="right-nav clr xss-hidden">
-                <ul class="header-menu-nav">
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                        <a href="#">文章内容信息</a>
-                    </li>
+                <ul id="fixed-nav" class="header-menu-nav">
+                    <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a>首页</a></li>
+                    <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销观点</a></li>
+                    <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销策略</a></li>
+                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>实战案例</a></li>
                 </ul>
             </div>
         </div>
@@ -116,37 +109,34 @@
         <div class="fixed xs-hidden">
             <div class="inner clr">
                 <nav class="left-nav clr">
-                    <ul id="b" class="header-menu-nav">
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                            <a href="#">首页</a>
+                    <ul id="fixed-list" class="header-menu-nav">
+                        <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                            <a>首页</a>
                         </li>
-                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1215"><a href="#">营销观点</a></li>
-                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1216"><a href="#">营销策略</a></li>
-                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1214"><a href="#">实战案例</a></li>
-                    </ul>
-                </nav>
-                <nav class="right-nav clr xss-hidden">
-                    <ul id="a" class="header-menu-nav">
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                            <a target="_blank" href="#">文章内容信息</a>
-                        </li>
+                        <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销观点</a></li>
+                        <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销策略</a></li>
+                        <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>实战案例</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </div>
     <nav class="mini-nav visible-xs">
-        <ul id="c" class="menu-mini-nav">
-            <li id="menu-item-1469" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="#">首页</a></li>
-            <li id="menu-item-1471" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1471"><a href="#">营销观点</a></li>
-            <li id="menu-item-1473" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1473"><a href="#">营销策略</a></li>
-            <li id="menu-item-1472" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1472"><a href="#">实战案例</a></li>
+        <ul id="mini-nav" class="menu-mini-nav">
+            <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a>首页</a></li>
+            <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销观点</a></li>
+            <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>营销策略</a></li>
+            <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a>实战案例</a></li>
         </ul>
     </nav>
 </header>
 <section class="xs-main index-main clr">
     <div class="inner">
         <div class="xs-left">
+            <div class="cat-title" style="display:none;">
+                <h1>营销观点 </h1>
+                <p class="des"></p>
+            </div>
             <div class="top-list clr">
                 <div class="slider">
                     <div id="owl-demo" class="owl-carousel owl-theme">
@@ -182,153 +172,10 @@
                         <em></em>
                     </div>
                 </div>
-                <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy category-siwei">
-                    <figure class="entry-img">
-                        <span class="sort"><a href="#">社交电商</a></span>
-                        <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" style="width: 210px;" alt=""></a>
-                    </figure>
-                    <div class="entry-content">
-                        <h2 class="entry-title"><a href="#">文章内容信息文本</a></h2>
-                        <div class="entry-site xs-hidden">
-                            文章内容信息文本
-                        </div>
-                        <div class="entry-meta">
-                            <div class="tags xs-hidden"><i></i></div>
-                            <div class="time"><i></i><a href="#">2018 /10/4 22:34</a></div>
-                            <div class="comments xs-hidden"><i class="fa fa-comments fa-1"><i></i><a href="#">沙发</a></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy">
-                    <figure class="entry-img">
-                        <span class="sort"><a href="#">社交电商</a></span>
-                        <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" style="width: 210px;" alt=""></a>
-                    </figure>
-                    <div class="entry-content">
-                        <h2 class="entry-title"><a href="#">文章内容信息文本</a></h2>
-                        <div class="entry-site xs-hidden">
-                            文章内容信息文本
-                        </div>
-                        <div class="entry-meta">
-                            <div class="tags xs-hidden"><i></i></div>
-                            <div class="time"><i></i><a href="#">2018 /10/4 22:34</a></div>
-                            <div class="comments xs-hidden"><i class="fa fa-comments fa-1"><i></i><a href="#">沙发</a></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy">
-                    <figure class="entry-img">
-                        <span class="sort"><a href="#">社交电商</a></span>
-                        <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" style="width: 210px;" alt=""></a>
-                    </figure>
-                    <div class="entry-content">
-                        <h2 class="entry-title"><a href="#">文章内容信息文本</a></h2>
-                        <div class="entry-site xs-hidden">
-                            文章内容信息文本
-                        </div>
-                        <div class="entry-meta">
-                            <div class="tags xs-hidden"><i></i></div>
-                            <div class="time"><i></i><a href="#">2018 /10/4 22:34</a></div>
-                            <div class="comments xs-hidden"><i class="fa fa-comments fa-1"><i></i><a href="#">沙发</a></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy">
-                    <figure class="entry-img">
-                        <span class="sort"><a href="#">社交电商</a></span>
-                        <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" style="width: 210px;" alt=""></a>
-                    </figure>
-                    <div class="entry-content">
-                        <h2 class="entry-title"><a href="#">文章内容信息文本</a></h2>
-                        <div class="entry-site xs-hidden">
-                            文章内容信息文本
-                        </div>
-                        <div class="entry-meta">
-                            <div class="tags xs-hidden"><i></i></div>
-                            <div class="time"><i></i><a href="#">2018 /10/4 22:34</a></div>
-                            <div class="comments xs-hidden"><i class="fa fa-comments fa-1"><i></i><a href="#">沙发</a></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy">
-                    <figure class="entry-img">
-                        <span class="sort"><a href="#">社交电商</a></span>
-                        <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" style="width: 210px;" alt=""></a>
-                    </figure>
-                    <div class="entry-content">
-                        <h2 class="entry-title"><a href="#">文章内容信息文本</a></h2>
-                        <div class="entry-site xs-hidden">
-                            文章内容信息文本
-                        </div>
-                        <div class="entry-meta">
-                            <div class="tags xs-hidden"><i></i></div>
-                            <div class="time"><i></i><a href="#">2018 /10/4 22:34</a></div>
-                            <div class="comments xs-hidden"><i class="fa fa-comments fa-1"><i></i><a href="#">沙发</a></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy">
-                    <figure class="entry-img">
-                        <span class="sort"><a href="#">社交电商</a></span>
-                        <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" style="width: 210px;" alt=""></a>
-                    </figure>
-                    <div class="entry-content">
-                        <h2 class="entry-title"><a href="#">文章内容信息文本</a></h2>
-                        <div class="entry-site xs-hidden">
-                            文章内容信息文本
-                        </div>
-                        <div class="entry-meta">
-                            <div class="tags xs-hidden"><i></i></div>
-                            <div class="time"><i></i><a href="#">2018 /10/4 22:34</a></div>
-                            <div class="comments xs-hidden"><i class="fa fa-comments fa-1"><i></i><a href="#">沙发</a></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy">
-                    <figure class="entry-img">
-                        <span class="sort"><a href="#">社交电商</a></span>
-                        <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" style="width: 210px;" alt=""></a>
-                    </figure>
-                    <div class="entry-content">
-                        <h2 class="entry-title"><a href="#">文章内容信息文本</a></h2>
-                        <div class="entry-site xs-hidden">
-                            文章内容信息文本
-                        </div>
-                        <div class="entry-meta">
-                            <div class="tags xs-hidden"><i></i></div>
-                            <div class="time"><i></i><a href="#">2018 /10/4 22:34</a></div>
-                            <div class="comments xs-hidden"><i class="fa fa-comments fa-1"><i></i><a href="#">沙发</a></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy">
-                    <figure class="entry-img">
-                        <span class="sort"><a href="#">社交电商</a></span>
-                        <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" style="width: 210px;" alt=""></a>
-                    </figure>
-                    <div class="entry-content">
-                        <h2 class="entry-title"><a href="#">文章内容信息文本</a></h2>
-                        <div class="entry-site xs-hidden">
-                            文章内容信息文本
-                        </div>
-                        <div class="entry-meta">
-                            <div class="tags xs-hidden"><i></i></div>
-                            <div class="time"><i></i><a href="#">2018 /10/4 22:34</a></div>
-                            <div class="comments xs-hidden"><i class="fa fa-comments fa-1"><i></i><a href="#">沙发</a></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
             </div>
             <div id="pagenavi">
-                <a href="#" class="page-numbers">下一页</a>
+                <a class="page-up">上一页</a>
+                <a class="page-down">下一页</a>
             </div>
         </div>
         <div class="xs-right sidebar xs-hidden xss-hidden">
@@ -435,221 +282,7 @@
     <div id="shang" title="↑ 返回顶部"></div>
     <div id="xia" title="↓ 移至底部"></div>
 </div>
-<script>
-    function getAdvertData() {
-        var postData = {
-            page: 1,
-            pagesize: 1
-        };
-        $.ajax({
-            url: '/ad',
-            type: 'get',
-            data: postData,
-            success: function (res) {
-                $("#g-sidebar-top>a>img").attr('src',res.data[0].coverPicture);
-            }
-        })
-    }
-    function getChoiceArticle() {
-        var postData = {
-            page: 1,
-            pagesize: 4
-        };
-        $.ajax({
-            url: '/hot',
-            type: 'get',
-            data: postData,
-            success: function (res) {
-                var data = res.data;
-                var $ul = $(".daodu>.dd-list");
-                if(!res.data.length) {
-                    $ul.append('<li style="text-align: center">暂无数据</li>');
-                    return ;
-                }
-                for(var i = 0;i < data.length;i++) {
-                    $ul.append('<li>' +
-                        '<figure class="dd-img">' +
-                        '<a href="/front/article?id='+data[i].id+'">' +
-                        '<img src="'+data[i].coverPicture+'" alt=""></a></figure>' +
-                        '<div class="dd-content">' +
-                        '<h2 class="dd-title"><a href="/front/article?id='+data[i].id+'">'+data[i].title+'</a></h2>' +
-                        '<div class="dd-site xs-hidden">'+data[i].introduction+'</div></div></li>')
-                }
-            },
-            error: function (e) {
-                $('.remen').append('<li style="text-align: center">暂无数据</li>');
-            }
-        })
-    }
-    function getRecentArticle() {
-        var postData = {
-            page: 1,
-            pagesize: 5
-        };
-        $.ajax({
-        url: '/article',
-        type: 'get',
-        data: postData,
-        success: function (res) {
-            var data = res.data;
-            var $ul = $("#rencent-posts>ul");
-            if(!res.data.length) {
-                $ul.append('<li style="text-align: center">暂无数据</li>');
-                return ;
-            }
-            for(var i = 0;i < data.length;i++) {
-                $ul.append('<li><a href="/front/article?id='+data[i].id+'">'+data[i].title+'</a></li>')
-            }
-        }
-    })
-    }
-    function getHotArticle() {
-        var postData = {
-            page: 1,
-            pagesize: 5
-        };
-        $.ajax({
-            url: '/hot',
-            type: 'get',
-            data: postData,
-            success: function (res) {
-                var data = res.data;
-                var $ul = $(".remen");
-                if(!res.data.length) {
-                    $ul.append('<li style="text-align: center">暂无数据</li>');
-                    return ;
-                }
-                for(var i = 0;i < data.length;i++) {
-                    $ul.append('<li><a href="/front/article?id='+data[i].id+'">'+data[i].title+'</a></li>')
-                }
-            },
-            error: function (e) {
-                $('.remen').append('<li style="text-align: center">暂无数据</li>');
-            }
-        })
-    }
-    function getHeadlines() {
-        var postData = {
-            page: 1,
-            pagesize: 6
-        };
-        $.ajax({
-            url: '/article',
-            type: 'get',
-            data: postData,
-            success: function (res) {
-                var data = res.data;
-                var $heading = $('.headlinesArticle>ul');
-                $heading.empty();
-                for (var i = 0;i < data.length;i++) {
-                    $heading.append('<li><h3><a href="/front/article?id='+data[i].id+'">'+data[i].title+'</a></h3></li>')
-                }
-            },
-            error: function (e) {
-                console.log(e);
-            }
-        })
-    }
-    function getNewArticlePage(page) {
-        var postData = {
-            page: page,
-            pagesize: 10
-        };
-        $.ajax({
-            url: '/article',
-            type: 'get',
-            data: postData,
-            success: function (res) {
-                var data = res.data;
-                var $contentAjax = $('.content-ajax');
-                $('article.type-post').remove();
-                for (var i = 0;i < data.length;i++) {
-                    $contentAjax.append('<article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy">' +
-                        '<figure class="entry-img">' +
-                        '<span class="sort"><a href="#">'+data[i].tagname+'</a></span>' +
-                        '<a href="/front/article?id='+data[i].id+'"><img src="'+data[i].coverPicture+'" alt=""></a>' +
-                        '</figure>' +
-                        '<div class="entry-content">' +
-                        '<h2 class="entry-title"><a href="/front/article?id='+data[i].id+'">'+data[i].title+'</a></h2>' +
-                        '<div class="entry-site xs-hidden">'+data[i].introduction+'</div>' +
-                        '<div class="entry-meta">' +
-                        '<div class="time"><i></i><a>'+data[i].in_date.replace('T',' ')+'</a></div></div></div></article>')
-                }
-                if(res.total <= 10) {
-                    $('#pagenavi').remove();
-                }
-            },
-            error: function (e) {
-                console.log(e);
-            }
-        })
-    }
-    function getCarouselList() {
-        var postData = {
-            page: 1,
-            pagesize: 5
-        };
-        $.ajax({
-            url: '/carousel',
-            type: 'get',
-            data: postData,
-            success: function (res) {
-                var data = res.data;
-                var $owl = $('#owl-demo');
-                var $clickBtn = $('.owl-pagination')
-                for (var i = 0;i < data.length;i++) {
-                    $owl.append('<div class="item">' +
-                        '<div class="slider-img">' +
-                        '<a href="/front/article?id='+data[i].id+'">' +
-                        '<img class="hdp-img" src="'+data[i].coverPicture+'" alt="">' +
-                        '</a>' +
-                        '</div>' +
-                        '<div class="slider-content">' +
-                        '<h2>' +
-                        '<a href="/front/article?id='+data[i].id+'">'+data[i].title+'</a></h2>' +
-                        '<div class="slidertext xs-hidden">'+data[i].introduction+'</div></div></div>');
-                }
-                $("#owl-demo").owlCarousel({
-                    autoPlay: true,
-                    slideSpeed : 300,
-                    paginationSpeed : 400,
-                    stopOnHover : true,
-                    singleItem:true
-                });
-            },
-            error: function (e) {
-                console.log(e);
-            }
-        })
-    }
-    $(function () {
-    $("img").lazyload({
-        effect:"fadeIn"
-    });
-    $(document).on('click','.header-menu-nav>li',function(e) {
-        e.stopPropagation();
-        $(this).siblings().removeClass('current-menu-item');
-        $(this).addClass('current-menu-item');
-        var isHome = $(this).data('nav');
-        console.log(isHome);
-        if(isHome === -1) {
-            $('.top-list').show();
-            $('.daodu').show();
-        } else {
-            $('.top-list').hide();
-            $('.daodu').hide();
-        }
-    });
-    var pageIndex = 1;
-    getNewArticlePage(pageIndex);
-    getAdvertData();
-    getRecentArticle();
-    getHotArticle();
-    getChoiceArticle();
-    getCarouselList();
-    getHeadlines();
-});
-</script>
+<script src="{% static 'main/front/js/index.js' %}"></script>
 <script type="text/javascript" src="{% static 'main/front/plugin/owlcarousel/js/owl.carousel.js' %}"></script>
 <script type="text/javascript" src="{% static 'main/front/plugin/owlcarousel/js/custom.js' %}"></script>
 </body>

@@ -12,7 +12,6 @@
                 $('.nav-bg').hide()
             });
         $(window).scroll(function(){ if($(this).scrollTop()>130){$(".fixed").css("display","block")}else{$(".fixed").css("display","none")}})
-        $(".menu-button").click(function() {$(".menu-mini-nav").slideToggle(); } )
         $(".date ul li").first().addClass("hov");
         $(".logindiv").hover(function(){$(this).addClass("hover");$(".login-links").css("display","block");},function(){$(this).removeClass("hover");$(".login-links").css("display","none")})
         $(".date ul li").hover(function(){$(this).addClass("hov").siblings().removeClass("hov");})
