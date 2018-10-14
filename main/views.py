@@ -45,3 +45,7 @@ def advertDetail(request):
 
 def carouselDetail(request):
     return render(request, 'main/backend/carouselDetail.html')
+
+
+def userInfo(request):
+    return render(request,'main/backend/userInfo.html')

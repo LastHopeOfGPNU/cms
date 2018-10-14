@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0 user-scalable=no">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>个人信息管理</title>
+    <!--<link rel="icon" href="../../static/assets/logo.png" type="image/x-icon">-->
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/bootstrap-3.3.7/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/font/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/bootstrapValidator/css/bootstrapValidator.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/backend/css/common.css' %}">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="{% static 'main/backend/plugin/font/css/font-awesome-ie7.min.css' %}">
+    <![endif]-->
+</head>
+<body>
+<div id="main">
+	<div style="display: block">
+		<button id="save" type="button" class="btn btn-sm btn-primary"><i class="icon-save"></i> 保存</button>
+	</div>
+	<div style="margin-top: 30px" class="container-fluid">
+		<div class="panel-box">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">个人信息管理</h3>
+				</div>
+				<div class="panel-body" id="fillBlanks">
+					<form id="newForm" name="newForm">
+                        <div class="form-group">
+                            <img class="user-avatar" onclick="upLoading('#file')" src="{% static 'main/backend/assets/user.jpg' %}" alt="..." class="img-rounded">
+                            <input type="file" class="form-control" id="file" style="display: none" placeholder="未选择任何文件">
+                            <input type="text" id="avatar" style="display: none" required>
+                        </div>
+						<div class="form-group form-group-sm">
+							<label for="nick">名字</label>
+							<input type="text" id="nick" name="nick" class="form-control" required>
+						</div>
+                        <div class="form-group form-group-sm">
+							<label for="domain_name">域名</label>
+							<input type="text" id="domain_name" name="domain_name" class="form-control" required>
+						</div>
+                        <div class="form-group form-group-sm">
+							<label for="wechat">微信</label>
+							<input type="text" id="wechat" name="wechat" class="form-control" required>
+						</div>
+						<div class="form-group form-group-sm">
+							<label for="qq">QQ</label>
+							<input type="text" id="qq" name="qq" class="form-control" required>
+						</div>
+						<div class="form-group form-group-sm">
+							<label for="weibo">微博</label>
+							<input type="text" id="weibo" name="weibo" class="form-control" required>
+						</div>
+                        <div class="form-group form-group-sm">
+							<label for="introduction">个人简介（签名）</label>
+							<textarea id="introduction" class="ckEditor form-control" name="introduction" rows="10"></textarea>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{% static 'main/backend/plugin/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrapValidator/js/bootstrapValidator.min.js' %}"></script>
+<script src="{% static 'main/backend/plugin/bootstrapValidator/js/language/zh_CN.js' %}"></script>
+<script src="{% static 'main/backend/plugin/layer/layer.js' %}"></script>
+<script src="{% static 'main/backend/js/userInfo.js' %}"></script>
+</body>
+</html>
