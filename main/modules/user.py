@@ -97,7 +97,7 @@ class UploadAvatarView(GenericAPIView):
                 for line in file: img.write(line)
             user.avatar_url = '/' + STATIC_ROOT + img_name
             user.save()
-            return Response({'data': self.STATIC_PATH + img_name, 'success': True, 'msg': ''})
+            return Response({'data': user.avatar_url, 'success': True, 'msg': ''})
         except Exception as e:
             print(e.__repr__())
             return Response({'data': '', 'success': False, 'msg': ''})
