@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'main.middlewares.AuthenticationMiddleware',
 ]
 
 ROOT_URLCONF = 'cms.urls'
@@ -79,8 +80,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cms',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'PASSWORD': 'LANse123',
+        'HOST': '39.108.183.38',
         'PORT': '3306'
     }
 }

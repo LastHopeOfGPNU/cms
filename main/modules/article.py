@@ -6,10 +6,12 @@ from urllib.parse import urljoin
 from ..models import *
 from ..serializers import *
 from .core import *
+from ..decorators import *
 
 
 class ImageView(GenericAPIView):
     # 上传图片接口
+    @login_required
     def post(self, request):
         """
         上传成功：
@@ -77,6 +79,7 @@ class ArticleDetailView(GenericAPIView):
             print(e.__repr__())
             return Response({'data': '', 'success': False, 'msg': msg})
 
+    @login_required
     def post(self, request):  # 添加文章
         try:
             params = request.data['params']
@@ -105,6 +108,7 @@ class ArticleDetailView(GenericAPIView):
             print(e.__repr__())
             return Response({'data': '', 'success': False, 'msg': msg})
 
+    @login_required
     def put(self, request):  # 修改文章
         try:
             params = request.data['params']

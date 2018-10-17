@@ -8,6 +8,7 @@ from time import time
 import os
 from cms.settings import STATIC_ROOT
 from urllib.parse import urljoin
+from ..decorators import *
 
 
 def create_user(username, password):
@@ -62,6 +63,7 @@ class UserView(GenericAPIView):
         return Response({'data': data, 'msg': '', 'success': True})
 
     # 修改用户信息
+    @login_required
     def put(self, request):
         edit_success = {'data': '', 'msg': '修改成功', 'success': True}
         edit_fail = {'data': '', 'msg': '修改失败', 'success': False}
@@ -87,6 +89,7 @@ class UserView(GenericAPIView):
 class UploadAvatarView(GenericAPIView):
     STATIC_PATH = 'static/'
 
+    @login_required
     def post(self, request):
         try:
             url = '/static/main/'

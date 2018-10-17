@@ -1,6 +1,7 @@
 from rest_framework import generics
 from rest_framework.response import Response
 from django.core.paginator import PageNotAnInteger, EmptyPage, Paginator
+from ..decorators import *
 
 
 class BaseListView(generics.GenericAPIView):
@@ -30,6 +31,7 @@ class BaseListView(generics.GenericAPIView):
         })
         return Response(data)
 
+    @login_required
     def delete(self, request):
         try:
             pk = request.GET[self.pk_field]
