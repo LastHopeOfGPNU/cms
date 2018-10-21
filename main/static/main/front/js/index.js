@@ -233,6 +233,8 @@ $(function () {
             $('.daodu').show();
             $('.tip').show();
             $('.cat-title').hide();
+        }else if (nav === ''){
+            window.location.href = '/front/article?id=-1'
         } else {
             $('.top-list').hide();
             $('.daodu').hide();
@@ -282,7 +284,7 @@ $(function () {
         // getNewArticlePage(pageIndex, nav);
     }
     getNewArticlePage(pageIndex, nav);
-    getUserInfo();
+    // getUserInfo();
     getAdvertData();
     getRecentArticle();
     getHotArticle();
