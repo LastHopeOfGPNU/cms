@@ -34,7 +34,7 @@ function getChoiceArticle() {
                 $ul.append('<li>' +
                     '<figure class="dd-img">' +
                     '<a href="/front/article?id='+data[i].id+'">' +
-                    '<img src="'+data[i].coverPicture+'" alt=""></a></figure>' +
+                    '<img src="'+data[i].coverPicture+'" alt="吴少波_三思荟 | 新零售势道法术器模式"></a></figure>' +
                     '<div class="dd-content">' +
                     '<h2 class="dd-title"><a href="/front/article?id='+data[i].id+'">'+data[i].title+'</a></h2>' +
                     '<div class="dd-site xs-hidden">'+data[i].introduction+'</div></div></li>')
@@ -131,7 +131,7 @@ function getCarouselList() {
                 $owl.append('<div class="item">' +
                     '<div class="slider-img">' +
                     '<a href="/front/article?id='+data[i].id+'">' +
-                    '<img class="hdp-img" src="'+data[i].coverPicture+'" alt="">' +
+                    '<img class="hdp-img" src="'+data[i].coverPicture+'" alt="吴少波_三思荟 | 新零售势道法术器模式">' +
                     '</a>' +
                     '</div>' +
                     '<div class="slider-content">' +
@@ -172,7 +172,7 @@ function getNewArticlePage(page, navId) {
                 $contentAjax.append('<article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy">' +
                     '<figure class="entry-img">' +
                     '<span class="sort"><a href="#">'+data[i].tagname+'</a></span>' +
-                    '<a href="/front/article?id='+data[i].id+'"><img src="'+data[i].coverPicture+'" alt=""></a>' +
+                    '<a href="/front/article?id='+data[i].id+'"><img src="'+data[i].coverPicture+'" alt="吴少波_三思荟 | 新零售势道法术器模式"></a>' +
                     '</figure>' +
                     '<div class="entry-content">' +
                     '<h2 class="entry-title"><a href="/front/article?id='+data[i].id+'">'+data[i].title+'</a></h2>' +
@@ -202,6 +202,16 @@ function getNewArticlePage(page, navId) {
         }
     });
 }
+function getUserInfo() {
+        $.ajax({
+            url:'/user/info',
+            type: 'get',
+            success: function (res) {
+                var data = res.data
+                $('.wushaobo').attr('src',data.avatar_url);
+            }
+        })
+    }
 $(function () {
 
     $("img").lazyload({
@@ -263,14 +273,16 @@ $(function () {
         $('.tip').hide();
         $('.cat-title').show();
         if (nav === 0) {
-            $('.cat-title>h1').text('营销观点')
+            $('.cat-title>h1').text('取势第一')
         }else if(nav === 1) {
-            $('.cat-title>h1').text('营销策略');
+            $('.cat-title>h1').text('道法术器');
         }else if(nav === 2) {
-            $('.cat-title>h1').text('实战案例');
+            $('.cat-title>h1').text('3sd营销体系');
         }
-        getNewArticlePage(pageIndex, nav);
+        // getNewArticlePage(pageIndex, nav);
     }
+    getNewArticlePage(pageIndex, nav);
+    getUserInfo();
     getAdvertData();
     getRecentArticle();
     getHotArticle();
