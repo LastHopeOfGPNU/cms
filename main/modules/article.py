@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
 from django.utils import timezone
+from django.db.models import F
 import os
 from urllib.parse import urljoin
 from ..models import *
@@ -72,6 +73,9 @@ class ArticleDetailView(GenericAPIView):
         try:
             id = request.GET['id']
             article = self.queryset.get(id=id)
+            # 更新浏览数
+            article.view = F('view') + 1
+            article.save()
             data = self.get_serializer(article).data
             return Response({'data': data, 'success': True, 'msg': ''})
         except Exception as e:
