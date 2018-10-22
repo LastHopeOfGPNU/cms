@@ -74,7 +74,7 @@ class ArticleDetailView(GenericAPIView):
             id = request.GET['id']
             article = self.queryset.get(id=id)
             # 更新浏览数
-            article.view = F('view') + 1
+            article.view += 1
             article.save()
             data = self.get_serializer(article).data
             return Response({'data': data, 'success': True, 'msg': ''})
