@@ -19,7 +19,7 @@ class Article(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     content = models.TextField()
-    introduction = models.CharField(max_length=200)  # 文章简介
+    introduction = models.TextField()  # 文章简介
     view = models.IntegerField(default=0)  # 浏览次数
     in_date = models.DateTimeField()  # 发布日期
     coverPicture = models.CharField(max_length=200)  # 封面图
