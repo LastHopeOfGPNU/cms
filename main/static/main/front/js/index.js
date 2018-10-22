@@ -203,15 +203,15 @@ function getNewArticlePage(page, navId) {
     });
 }
 function getUserInfo() {
-        $.ajax({
-            url:'/user/info',
-            type: 'get',
-            success: function (res) {
-                var data = res.data
-                $('.wushaobo').attr('src',data.avatar_url);
-            }
-        })
-    }
+    $.ajax({
+        url:'/user/info',
+        type: 'get',
+        success: function (res) {
+            var data = res.data
+            $('.wushaobo').attr('src',data.avatar_url);
+        }
+    })
+}
 $(function () {
 
     $("img").lazyload({

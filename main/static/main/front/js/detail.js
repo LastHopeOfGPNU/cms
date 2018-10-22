@@ -35,6 +35,8 @@ function getUserInfo() {
             success: function (res) {
                 var data = res.data;
                 $('#author-img>img').attr('src',data.avatar_url);
+                $('.touxiang>a>img').attr('src',data.avatar_url);
+                $('.touxiang>a>span').text(data.nick);
                 $('.au-name>a').text(data.nick).attr('title',data.nick);
                 $('.author-word').append('<span class="quotes q1"></span>'+data.introduction+'   <span class="quotes q2"></span>')
             }
