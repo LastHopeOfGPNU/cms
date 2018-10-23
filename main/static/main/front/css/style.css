@@ -2001,7 +2001,7 @@ hr {
 
 .flogo {
 
-    background: url('') no-repeat center center;
+    /*background: url('../img/logo.jpg') no-repeat center center;*/
 
     width: 220px;
 
@@ -3932,7 +3932,9 @@ nav.comment-nav a:hover {
     .related_post li a img{    width: 100%;
 
         height: auto;    display: block !important;}
-
+    .dd-img img, .related_post li img, .entry-img img, .slider-img img {
+        width: 100%;
+    }
 }
 
 
@@ -3982,5 +3984,7 @@ nav.comment-nav a:hover {
         margin-bottom: 50px;
 
     }
-
+    .dd-img img, .related_post li img, .entry-img img, .slider-img img {
+        width: 100%;
+    }
 }
