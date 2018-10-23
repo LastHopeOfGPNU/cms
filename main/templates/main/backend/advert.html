@@ -23,49 +23,6 @@
 </head>
 <body>
 <div id="main">
-    <div id="search-part" class="row" style="display: none">
-        <div id="search-form" name="search-form">
-            <div>
-                <div class="search-group col-sm-4 col-md-3 col-lg-3">
-                    <label class="search-label">题目标题</label>
-                    <input id="title" class="search-control" type="text"/>
-                </div>
-                <div class="search-group col-sm-4 col-md-3 col-lg-3">
-                    <label class="search-label">PID</label>
-                    <input id="problem_id" class="search-control" type="text"/>
-                </div>
-                <div class="search-group col-sm-4 col-md-3 col-lg-3">
-                    <label class="search-label">题目类型</label>
-                    <select class="form-control" name="problem_type" id="problem_type">
-                        <option value=""></option>
-                        <option value="1">填空题</option>
-                        <option value="2">选择题</option>
-                        <option value="3">编程题</option>
-                        <option value="4">问答题</option>
-                        <option value="5">判断题</option>
-                    </select>
-                </div>
-                <div class="search-group col-sm-4 col-md-3 col-lg-3">
-                    <label class="search-label">题目标签</label>
-                    <select class="form-control" name="tagid" id="tagid">
-                        <option value=""></option>
-                        {% for tag in tags %}
-                        <option value="{{ tag.tagid }}">{{ tag.tagname }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="serch-group col-sm-4 col-md-3 col-lg-3">
-                    <label class="search-label">题目从属</label>
-                    <select name="defunct" id="defunct" class="form-control">
-                        <option value=""></option>
-                        <option value="N">非竞赛题目</option>
-                        <option value="Y">竞赛题目</option>
-                        <option value="E">考试题目</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="data-part" class="clearfix">
         <div id="toolbar" class="btn-toolbar">
             <button class="btn btn-primary" onclick="showAddArticle()">添加广告 <i class="icon-zoom-in"></i></button>
