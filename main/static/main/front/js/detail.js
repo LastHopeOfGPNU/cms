@@ -16,6 +16,7 @@ $(function () {
             $('.single-meta>.time>a').text(data.in_date.replace('T',' '))
             $('.eye>a').text(data.view + ' views');
             $('.single-header>h1').text(data.title);
+            document.title = data.title;
             $('#introduction>p').text(data.introduction);
             $('.single-main').append(data.content);
             $('.crumbs>.nav-tag').text(data.tagname);
@@ -34,7 +35,7 @@ function getUserInfo() {
             type: 'get',
             success: function (res) {
                 var data = res.data;
-                $('#author-img>img').attr('src',data.avatar_url);
+                // $('#author-img>img').attr('src',data.avatar_url);
                 $('.touxiang>a>img').attr('src',data.avatar_url);
                 $('.touxiang>a>span').text(data.nick);
                 $('.au-name>a').text(data.nick).attr('title',data.nick);

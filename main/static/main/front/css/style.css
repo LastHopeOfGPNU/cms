@@ -2001,11 +2001,11 @@ hr {
 
 .flogo {
 
-    /*background: url('../img/logo.jpg') no-repeat center center;*/
+    background: url('../img/flogo.png') no-repeat center center;
 
-    width: 220px;
+    width: 431px;
 
-    height: 84px;
+    height: 156px;
 
     text-indent: -10000px;
 
@@ -3932,8 +3932,12 @@ nav.comment-nav a:hover {
     .related_post li a img{    width: 100%;
 
         height: auto;    display: block !important;}
-    .dd-img img, .related_post li img, .entry-img img, .slider-img img {
+    .related_post li img, .entry-img img, .slider-img img {
         width: 100%;
+    }
+    .dd-img img {
+        width:168px;
+        height: 112px;
     }
 }
 
@@ -3984,7 +3988,11 @@ nav.comment-nav a:hover {
         margin-bottom: 50px;
 
     }
-    .dd-img img, .related_post li img, .entry-img img, .slider-img img {
+    .related_post li img, .entry-img img, .slider-img img {
         width: 100%;
+    }
+    .dd-img img {
+        width:168px;
+        height: 112px;
     }
 }
