@@ -8,6 +8,7 @@
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>吴少波_三思荟 | 新零售势道法术器模式</title>
     <link id="contact-form-7-css" rel="stylesheet" href="{% static 'main/front/css/index.css' %}">
     <link rel="stylesheet" href="{% static 'main/backend/plugin/bootstrap-3.3.7/css/bootstrap.css' %}">
     <link id="style-css" rel="stylesheet" href="{% static 'main/front/css/style.css' %}">
@@ -23,6 +24,9 @@
     <style type="text/css" id="custom-background-css">
         body.custom-background { background-color: #ffffff; }
         .fancybox-margin{margin-right:17px;}
+        .footer-code {
+            width:150px;
+        }
     </style>
     <!--<script type="text/javascript" src="{% static 'main/front/plugin/owlcarousel/custom.js' %}"></script>-->
     <link rel="stylesheet" href="{% static 'main/front/css/style1.css'%}">
@@ -43,33 +47,12 @@
 <body>
 <header id="header" class="header clr">
     <div class="header-top inner clr">
-        <hgruop class="login-main">
+        <hgruop class="logo-main" style="margin-top: 10px;">
             <h1 class="logo">
-                <a href="#"><img src="{% static 'main/front/img/cs.jpg' %}" alt=""></a>
+                <a href="/index"><img src="{% static 'main/front/img/logo.jpg' %}" alt="吴少波_三思荟 | 新零售势道法术器模式"></a>
             </h1>
-            <h4 class="xs-hidden">XXX博客</h4>
+            <h4 class="xs-hidden">吴少波博客</h4>
         </hgruop>
-        <div style="display: none" class="login xs-hidden">
-            <div class="logindiv">
-                <div class="img">
-                    <img src="{% static 'main/front/img/cs.jpg' %}" alt="" class="avatar avatar-36 phone avatar-default" height="36" width="36"/>
-                </div>
-                <span class="yh">用户</span>
-                <i class="fa fa-caret-down fa-2"></i>
-                <ul class="login-links">
-                    <li data-sign="0" id="user-login" class="user-login">
-                        <i class="fa fa-arrow-right"></i>
-                        <span><a href="#" target="_blank">登陆</a></span>
-                    </li>
-                    <li data-sign="1" id="user-reg" class="user-reg">
-                        <i class="fa fa-user-times"></i>
-                        <span>
-                            <a href="#" target="_blank">注册</a>
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <div class="top-search xs-hidden xss-hidden">
             <form action="" id="search">
                 <input type="text" id="s">
@@ -84,9 +67,9 @@
             <nav class="left-nav clr">
                 <ul id="main-nav" class="header-menu-nav">
                     <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home"><a href="/index">首页</a></li>
-                    <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">营销观点</a></li>
-                    <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">营销策略</a></li>
-                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">实战案例</a></li>
+                    <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">新零售取势第一</a></li>
+                    <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">新零售道法术器</a></li>
+                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">新零售3sd营销体系</a></li>
                 </ul>
             </nav>
         </div>
@@ -97,9 +80,9 @@
             <div class="left-nav clr">
                 <ul id="fixed-nav" class="header-menu-nav">
                     <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home"><a href="/index">首页</a></li>
-                    <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">营销观点</a></li>
-                    <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">营销策略</a></li>
-                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">实战案例</a></li>
+                    <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">新零售取势第一</a></li>
+                    <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">新零售道法术器</a></li>
+                    <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">新零售3sd营销体系</a></li>
                 </ul>
             </div>
         </div>
@@ -111,9 +94,9 @@
                         <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home">
                             <a href="/index">首页</a>
                         </li>
-                        <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">营销观点</a></li>
-                        <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">营销策略</a></li>
-                        <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">实战案例</a></li>
+                        <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">新零售取势第一</a></li>
+                        <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">新零售道法术器</a></li>
+                        <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">新零售3sd营销体系</a></li>
                     </ul>
                 </nav>
             </div>
@@ -122,25 +105,25 @@
     <nav class="mini-nav visible-xs">
         <ul id="mini-nav" class="menu-mini-nav">
             <li data-nav="-1" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="/index">首页</a></li>
-            <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">营销观点</a></li>
-            <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">营销策略</a></li>
-            <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2">实战案例</a></li>
+            <li data-nav="0" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=0">新零售取势第一</a></li>
+            <li data-nav="1" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=1">新零售道法术器</a></li>
+            <li data-nav="2" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/index?menu=2"><新零售></新零售>3sd营销体系</a></li>
         </ul>
     </nav>
 </header>
 <section class="xs-main index-main clr">
     <div class="inner">
         <div class="xs-left">
-            <nav class="crumbs">现在位置： <a title="返回首页" href="/index">首页</a> &gt; <a href="" class="nav-tag" rel="category tag">营销观点</a> &gt;  正文 </nav>
+            <nav class="crumbs">现在位置： <a title="返回首页" href="/index">首页</a> &gt; <a href="" class="nav-tag" rel="category tag">关于三思荟</a> &gt;  正文 </nav>
             <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-wcy category-siwei">
 				<header class="single-header">
 					<h1></h1>
 					<div class="single-meta">
 						<div class="time"><i></i> <a href="javascript:void(0);"></a></div>
 						<div class="touxiang">
-							<a href="http://www.chenxincheng.com/author/xiaoming">
-								<img alt="陈信诚" src="{% static 'main/front/img/cs.jpg' %}" class="avatar avatar-26 photo" height="26" width="26">
-								<span>陈信诚</span>
+							<a href="/index">
+								<img alt="吴少波" src="{% static 'main/front/img/avatar.png' %}" class="avatar avatar-26 photo" height="26" width="26">
+								<span>吴少波</span>
 							</a>
 						</div>
 						<div class="eye xs-hidden"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;<a href="javascript:void(0);">- views</a> </div>
@@ -157,36 +140,19 @@
             <div class="authorbox">
 				<div class="author-top">
 					<div id="author-img">
-						<img alt="" src="{% static 'main/front/img/cs.jpg' %}" class="avatar avatar-96 photo" height="96" width="96">
+						<img alt="" src="{% static 'main/front/img/avatar.png' %}" class="avatar avatar-96 photo" height="96" width="96">
 					</div>
 					<div class="au-name">
-						<a title="" rel="author">陈信诚</a><br>
+						<a title="" rel="author">吴少波</a><br>
 						<span class="au-title">总共0篇文章</span>
 					</div> </div>
 				<div class="author-word"><!--<span class="quotes q1"></span>
 					营销作家，移动社交电商专家。私人微信：10532468。	<span class="quotes q2"></span>--></div>
 			</div>
             <aside class="widget-container widget_text">
-				<div class="si-title">
-					<h2>关注方式</h2>
-				</div>
-				<div class="textwidget">
-					<div id="Layer1" style="display:none">
-						<img src="{% static 'main/front/img/cs.jpg' %}">
-					</div>
-					<p>
-						<a onmouseover="Layer1.style.display=''" onmouseout="Layer1.style.display='none';">微信订阅号</a>
-						<br>
-						<a title="新浪微博" target="_blank" href="http://weibo.com/234039030">新浪微博</a>
-						<br>
-						<a title="联系QQ" target="_blank" href="http://sighttp.qq.com/authd?IDKEY=41a714ab92892919ed66f8eeebc70cbef0cffb0e40f3377f">联系QQ</a>
-					</p>
-				</div>
-			</aside>
-            <aside class="widget-container widget_text">
 				<div class="si-title"><h2>个人微信</h2></div>
 				<div class="textwidget">
-					<img src="{% static 'main/front/img/cs.jpg' %}" border="0" width="128" height="128">
+					<img src="{% static 'main/front/img/codeimg.jpg' %}" border="0" width="128" height="128">
 				</div>
 			</aside>
         </div>
@@ -204,7 +170,7 @@
             <nav class="footer-nav">
                 <ul class="footer-menu">
                     <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="#">关于信诚</a>
+                        <a href="/front/article?id=-1">关于三思荟</a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="#">合作事宜</a>
@@ -214,7 +180,10 @@
         </div>
         <div class="left">
             <div class="f-logo xs-hidden">
-                <h2 class="flogo"><a href="http://www.chenxincheng.com/" rel="home" title="陈信诚_企业军师 | 营销咨询 | 文案策划服务">陈信诚_企业军师 | 营销咨询 | 文案策划服务</a></h2>
+                <h2 class="flogo">
+                    <a href="/index" rel="home" title="吴少波_三思荟 | 新零售势道法术器模式">
+                        <img src="{% static 'main/front/img/logo.png' %}" alt="">
+                    </a></h2>
             </div>
         </div>
         <div class="right xs-hidden">
@@ -225,27 +194,18 @@
                 </ul>
             </nav>
             <div class="us right">
-                <a class="weibo" href="http://weibo.com/234039030" target="_blank"><i class="fa fa-weibo fa-4"></i></a>
-                <a class="qq" href="http://www.chenxincheng.com/wp-content/themes/leifw/img/qq.png"><i class="fa fa-qq fa-4"></i></a>
-                <a class="weixin" href="http://www.chenxincheng.com/wp-content/themes/leifw/img/weixin.png"><i class="fa fa-weixin fa-4"></i></a>
+                <img src="{% static 'main/front/img/codeimg.jpg' %}" class="footer-code">
             </div>
         </div>
         <div class="widget-container widget_text friendLink">
             <div class="textwidget">
                 <div class="textwidget">
-                    <a style="color: #454545" href="http://www.chenxincheng.com/" target="_blank">&nbsp;PS：</a>
-                    <a style="color: #454545" href="http://www.chenxincheng.com/" target="_blank">&nbsp;陈信诚</a>
-                    <a style="color: #454545" href="http://www.chenxincheng.com/" target="_blank">&nbsp;营销文案</a>
-                    <a style="color: #454545" href="http://www.chenxincheng.com/" target="_blank">&nbsp;克亚营销</a>
-                    <a style="color: #454545" href="http://www.chenxincheng.com/sitemap_baidu.xml" target="_blank">&nbsp;百度地图</a>
-                    <a style="color: #454545" href="http://www.chenxincheng.com/sitemap.html" target="_blank">&nbsp;谷歌地图</a>
-                    <a style="color: #303030" href="http://www.chenxincheng.com/" target="_blank">好网址</a>
-                    <a style="color: #303030" href="http://www.chenxincheng.com/" target="_blank">网址大全</a>
-                    <a style="color: #303030" href="http://www.chenxincheng.com/" target="_blank">网站大全</a>
-                    <a style="color: #303030" href="http://www.lfdian.com/" target="_blank">网址之家</a>
-                    <a style="color: #303030" href="http://www.chenxincheng.com/" target="_blank">春花导航</a>
-                    <a style="color: #303030" href="http://www.chenxincheng.com/" target="_blank">风云榜</a>
-                    <a style="color: #303030" href="http://www.chenxincheng.com/" target="_blank">购物导航</a>
+                    <a style="color: #454545" href="/index" target="_blank">&nbsp;PS：</a>
+                    <a style="color: #454545" href="/index" target="_blank">&nbsp;吴少波</a>
+                    <a style="color: #454545" href="/index" target="_blank">&nbsp;取势第一</a>
+                    <a style="color: #454545" href="/index" target="_blank">&nbsp;道法术器</a>
+                    <a style="color: #454545" href="/index" target="_blank">&nbsp;3sd营销体系</a>
+                    <a style="color: #454545" href="/index" target="_blank">&nbsp;关于三思荟</a>
                     <span style="font-family:Verdana, Geneva, sans-serif"> </span>
                 </div>
             </div>
@@ -253,7 +213,7 @@
     </div>
     <div class="copyr">
         <div class="inner">
-            <p>Copyright</p>
+            <p>Copyright © 2018 吴少波_三思荟 | 新零售势道法术器模式 All Rights Reserved</p>
             <script></script>
         </div>
     </div>

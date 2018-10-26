@@ -203,15 +203,15 @@ function getNewArticlePage(page, navId) {
     });
 }
 function getUserInfo() {
-        $.ajax({
-            url:'/user/info',
-            type: 'get',
-            success: function (res) {
-                var data = res.data
-                $('.wushaobo').attr('src',data.avatar_url);
-            }
-        })
-    }
+    $.ajax({
+        url:'/user/info',
+        type: 'get',
+        success: function (res) {
+            var data = res.data
+            $('.wushaobo').attr('src',data.avatar_url);
+        }
+    })
+}
 $(function () {
 
     $("img").lazyload({
@@ -241,11 +241,11 @@ $(function () {
             $('.tip').hide();
             $('.cat-title').show();
             if (nav === 0) {
-                $('.cat-title>h1').text('营销观点')
+                $('.cat-title>h1').text('新零售取势第一')
             }else if(nav === 1) {
-                $('.cat-title>h1').text('营销策略');
+                $('.cat-title>h1').text('新零售道法术器');
             }else if(nav === 2) {
-                $('.cat-title>h1').text('实战案例');
+                $('.cat-title>h1').text('新零售3sd营销体系');
             }
         }
         getNewArticlePage(pageIndex, nav);

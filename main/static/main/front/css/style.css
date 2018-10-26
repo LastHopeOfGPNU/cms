@@ -1176,6 +1176,7 @@ hr {
 
 
 .dd-site {
+    height: 70px;
 
     line-height: 18px;
 
@@ -2001,11 +2002,11 @@ hr {
 
 .flogo {
 
-    background: url(http://www.chenxincheng.com.k.90qh.com/wp-content/themes/leifw/img/flogo.png) no-repeat center center;
+    background: url('../img/flogo.png') no-repeat center center;
 
-    width: 220px;
+    width: 431px;
 
-    height: 84px;
+    height: 156px;
 
     text-indent: -10000px;
 
@@ -3932,7 +3933,17 @@ nav.comment-nav a:hover {
     .related_post li a img{    width: 100%;
 
         height: auto;    display: block !important;}
-
+    .related_post li img, .slider-img img {
+        width: 100%;
+    }
+    .dd-img img {
+        width:168px;
+        height: 112px;
+    }
+     .entry-img img {
+        width: 210px;
+        height: 140px;
+    }
 }
 
 
@@ -3982,5 +3993,15 @@ nav.comment-nav a:hover {
         margin-bottom: 50px;
 
     }
-
+    .related_post li img, .slider-img img {
+        width: 100%;
+    }
+    .dd-img img {
+        width:168px;
+        height: 112px;
+    }
+    .entry-img img {
+        width: 210px;
+        height: 140px;
+    }
 }
