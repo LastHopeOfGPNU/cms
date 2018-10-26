@@ -48,7 +48,7 @@ class ArticleView(BaseListView):
         tagid = request.GET.get('tagid', None)
         path_info = request.path_info
         try:
-            dataset = self.queryset.order_by('-id')
+            dataset = self.queryset.exclude(id=-1).order_by('-id')
             if tagid:
                 dataset = dataset.filter(tagid=tagid)
             elif path_info == '/hot':  # 热门
